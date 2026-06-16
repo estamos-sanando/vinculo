@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>VÃ­nculo â€” EntendÃ©. ElegÃ­. Cuidate.</title>
+<title>Vínculo — Entendé. Elegí. Cuidate.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -82,7 +82,6 @@ async function renderContacts() {
   container.innerHTML = html;
 }
 
-// Call renderContacts in doInit()
 function shareApp() {
   if (navigator.share) {
     navigator.share({
@@ -92,14 +91,16 @@ function shareApp() {
     }).catch(e => console.log(e));
   } else {
     const t = window.location.href;
-    if (navigator.clipboard) { navigator.clipboard.writeText(t).then(() => toast('Enlace copiado al portapapeles ??')); }
-    else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Enlace copiado al portapapeles ??'); }
+    if (navigator.clipboard) { navigator.clipboard.writeText(t).then(() => toast('Enlace copiado al portapapeles 💜')); }
+    else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Enlace copiado al portapapeles 💜'); }
   }
 }
+
+// Ensure scripts render properly
 </script>
 <style>
 /* ============================================
-   CSS VARIABLES â€” PALETA COMPLETA
+   CSS VARIABLES — PALETA COMPLETA
    ============================================ */
 :root {
   --lila: #A78BFA;
@@ -549,7 +550,7 @@ button{font-family:inherit}
 .greeting h1{font-family:'Playfair Display',serif;font-size:1.65rem;color:var(--text-primary);margin-bottom:2px}
 .greeting p{font-size:.9rem;color:var(--text-muted)}
 
-/* SemÃ¡foro Card */
+/* Semáforo Card */
 .semaforo-card{background:var(--white);border-radius:var(--radius-2xl);padding:24px;margin-bottom:18px;box-shadow:var(--shadow-sm)}
 .semaforo-card h3{font-size:.92rem;font-weight:600;margin-bottom:18px;color:var(--text-primary)}
 .semaforo-options{display:flex;gap:10px}
@@ -592,7 +593,7 @@ button{font-family:inherit}
 .stat-card .stat-num{font-size:1.4rem;font-weight:700;color:var(--lila-dark)}
 .stat-card .stat-lbl{font-size:.7rem;color:var(--text-muted);margin-top:2px}
 
-/* Vinculo ring â€” CORREGIDO Y MEJORADO */
+/* Vinculo ring — CORREGIDO Y MEJORADO */
 .vinculo-card{background:linear-gradient(135deg,var(--lila-ghost) 0%,var(--rosa-ghost) 100%);border-radius:var(--radius-2xl);padding:22px;margin-bottom:18px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
 .vinculo-card::before{content:'';position:absolute;top:-40px;right:-30px;width:120px;height:120px;background:rgba(167,139,250,.08);border-radius:50%}
 .vinculo-card>*{position:relative;z-index:1}
@@ -832,7 +833,7 @@ button{font-family:inherit}
 .guided-messages h3{font-size:.92rem;margin-bottom:12px}
 .message-bubble{background:var(--lila-ghost);border-radius:var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;padding:12px 16px;margin-bottom:8px;font-size:.84rem;color:var(--text-secondary);line-height:1.5;cursor:pointer;transition:all .2s;position:relative}
 .message-bubble:hover{background:var(--lila-light)}
-.message-bubble::after{content:'ðŸ“‹';position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:.75rem;opacity:.5}
+.message-bubble::after{content:'📋';position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:.75rem;opacity:.5}
 
 .contact-card{background:var(--white);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow-xs);transition:transform .2s}
 .contact-card:hover{transform:translateY(-1px)}
@@ -852,7 +853,7 @@ button{font-family:inherit}
 .btn-export:hover{background:var(--sage);color:#fff}
 
 /* ============================================
-   BOTTOM NAV â€” MEJORADA
+   BOTTOM NAV — MEJORADA
    ============================================ */
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;height:calc(var(--nav-height) + var(--safe-bottom));background:var(--white);display:flex;align-items:center;justify-content:space-around;padding:8px 0 var(--safe-bottom);box-shadow:0 -2px 20px rgba(0,0,0,.08);z-index:200;border-top:1px solid var(--stone);backdrop-filter:blur(12px)}
 @media(min-width:520px){.bottom-nav{max-width:520px;left:50%;transform:translateX(-50%);border-radius:var(--radius-2xl) var(--radius-2xl) 0 0}}
@@ -902,7 +903,7 @@ button{font-family:inherit}
 .tutorial-progress .tp-dot.active{background:var(--lila);width:24px;border-radius:4px}
 
 .highlight-element{position:relative;z-index:9001}
-.highlight-element::before{content:'';position:absolute;inset:-8px;width:auto !important;height:auto !important;border-radius:var(--radius-lg);border:3px solid var(--lila);animation:pulseBorder 2s ease-in-out infinite;z-index:9000;pointer-events:none}
+.highlight-element::before{content:'';position:absolute;inset:-8px;border-radius:var(--radius-lg);border:3px solid var(--lila);animation:pulseBorder 2s ease-in-out infinite;z-index:9000;pointer-events:none}
 @keyframes pulseBorder{0%,100%{box-shadow:0 0 0 0 rgba(167,139,250,.7)}50%{box-shadow:0 0 0 12px rgba(167,139,250,0)}}
 
 /* ============================================
@@ -1058,9 +1059,9 @@ button{font-family:inherit}
   <!-- ======================== PIN SCREEN ======================== -->
   <div class="pin-screen" id="pinScreen">
     <div class="pin-content">
-      <div class="pin-icon">ðŸ”</div>
-      <h2>VÃ­nculo Seguro</h2>
-      <p>IngresÃ¡ tu PIN para continuar</p>
+      <div class="pin-icon">🔐</div>
+      <h2>Vínculo Seguro</h2>
+      <p>Ingresá tu PIN para continuar</p>
       <div class="pin-dots" id="pinDots">
         <span class="pin-dot"></span>
         <span class="pin-dot"></span>
@@ -1071,7 +1072,7 @@ button{font-family:inherit}
         <span class="pin-dot"></span>
         <span class="pin-dot"></span>
       </div>
-      <div class="pin-error" id="pinError">PIN incorrecto, intentÃ¡ de nuevo</div>
+      <div class="pin-error" id="pinError">PIN incorrecto, intentá de nuevo</div>
       <div class="pin-keyboard">
         <button onclick="pressPinKey('1')">1</button>
         <button onclick="pressPinKey('2')">2</button>
@@ -1084,9 +1085,9 @@ button{font-family:inherit}
         <button onclick="pressPinKey('9')">9</button>
         <button onclick="pressPinKey('clear')">C</button>
         <button onclick="pressPinKey('0')">0</button>
-        <button onclick="pressPinKey('backspace')">â†</button>
+        <button onclick="pressPinKey('backspace')">←</button>
       </div>
-      <button class="btn-primary" onclick="submitPin()" style="margin-top: 24px; max-width: 200px;">Desbloquear ðŸ’œ</button>
+      <button class="btn-primary" onclick="submitPin()" style="margin-top: 24px; max-width: 200px;">Desbloquear 💜</button>
     </div>
   </div>
 
@@ -1095,8 +1096,8 @@ button{font-family:inherit}
     <div class="splash-petal"></div>
     <div class="splash-petal"></div>
     <div class="splash-petal"></div>
-    <div class="splash-logo">VÃ­nculo</div>
-    <p class="splash-tagline">"EntendÃ©. ElegÃ­. Cuidate."</p>
+    <div class="splash-logo">Vínculo</div>
+    <p class="splash-tagline">"Entendé. Elegí. Cuidate."</p>
     <p class="splash-sub">Un espacio seguro, sin juicios</p>
     <div class="loading-dots"><span></span><span></span><span></span></div>
   </div>
@@ -1104,40 +1105,40 @@ button{font-family:inherit}
   <!-- ======================== TERMS ======================== -->
   <div class="terms-screen" id="termsScreen">
     <div class="terms-header">
-      <button class="terms-close" onclick="closeTerms()">âœ•</button>
-      <h1>ðŸ“‹ TÃ©rminos de uso</h1>
+      <button class="terms-close" onclick="closeTerms()">✕</button>
+      <h1>📋 Términos de uso</h1>
       <p>Con transparencia y cuidado</p>
     </div>
     <div class="terms-content">
-      <div class="terms-section"><h3>ðŸ”’ Tu privacidad es sagrada</h3><p>Todos tus datos viven en tu dispositivo, cifrados. No enviamos nada a servidores. No usamos cookies.</p><ul><li>PodÃ©s eliminar todo cuando quieras.</li><li>Tus registros nunca salen de tu telÃ©fono.</li><li>No compartimos informaciÃ³n con nadie.</li></ul></div>
-      <div class="terms-section"><h3>ðŸ’œ QuÃ© es (y quÃ© no es)</h3><p>VÃ­nculo te ayuda a registrar situaciones, reflexionar y devolverte claridad.</p><ul><li>NO es un diagnÃ³stico profesional.</li><li>NO reemplaza la terapia.</li><li>NO busca generar alarma.</li><li>SÃ te devuelve autonomÃ­a.</li></ul></div>
-      <div class="terms-section"><h3>âš ï¸ Emergencias</h3><p>Si estÃ¡s en peligro inmediato, contactÃ¡ al 911. La app incluye lÃ­neas de ayuda para violencia de gÃ©nero.</p></div>
+      <div class="terms-section"><h3>🔒 Tu privacidad es sagrada</h3><p>Todos tus datos viven en tu dispositivo, cifrados. No enviamos nada a servidores. No usamos cookies.</p><ul><li>Podés eliminar todo cuando quieras.</li><li>Tus registros nunca salen de tu teléfono.</li><li>No compartimos información con nadie.</li></ul></div>
+      <div class="terms-section"><h3>💜 Qué es (y qué no es)</h3><p>Vínculo te ayuda a registrar situaciones, reflexionar y devolverte claridad.</p><ul><li>NO es un diagnóstico profesional.</li><li>NO reemplaza la terapia.</li><li>NO busca generar alarma.</li><li>SÍ te devuelve autonomía.</li></ul></div>
+      <div class="terms-section"><h3>⚠️ Emergencias</h3><p>Si estás en peligro inmediato, contactá al 911. La app incluye líneas de ayuda para violencia de género.</p></div>
     </div>
-    <div class="terms-warm"><p>"LeÃ­ esto porque tu bienestar nos importa. No es un trÃ¡mite, es un acuerdo de cuidado."</p></div>
+    <div class="terms-warm"><p>"Leí esto porque tu bienestar nos importa. No es un trámite, es un acuerdo de cuidado."</p></div>
     <div class="terms-accept">
-      <div class="terms-checkbox"><input type="checkbox" id="chkTerms"><label for="chkTerms">Entiendo que esta app no reemplaza atenciÃ³n profesional y acepto sus tÃ©rminos.</label></div>
-      <button class="btn-accept-terms" id="btnTerms" onclick="doAcceptTerms()">Continuar ðŸ’œ</button>
+      <div class="terms-checkbox"><input type="checkbox" id="chkTerms"><label for="chkTerms">Entiendo que esta app no reemplaza atención profesional y acepto sus términos.</label></div>
+      <button class="btn-accept-terms" id="btnTerms" onclick="doAcceptTerms()">Continuar 💜</button>
     </div>
   </div>
 
   <!-- ======================== ONBOARDING ======================== -->
   <div class="onboarding-screen" id="onboard">
     <div class="onboarding-card">
-      <div class="ob-emoji">ðŸŒ¸</div>
-      <h2>Â¿CÃ³mo te llamÃ¡s?</h2>
+      <div class="ob-emoji">🌸</div>
+      <h2>¿Cómo te llamás?</h2>
       <p>Tu nombre queda cifrado en tu dispositivo. Es para saludarte mejor.</p>
-      <input type="text" class="onboarding-input" id="nameInput" placeholder="Tu nombre o como quieras que te llamemosâ€¦" maxlength="25" autocomplete="off">
-      <button class="btn-onboarding" onclick="doOnboard()">Empezar mi camino â†’</button>
-      <p class="onboarding-note">PodÃ©s cambiarlo desde ajustes</p>
+      <input type="text" class="onboarding-input" id="nameInput" placeholder="Tu nombre o como quieras que te llamemos…" maxlength="25" autocomplete="off">
+      <button class="btn-onboarding" onclick="doOnboard()">Empezar mi camino →</button>
+      <p class="onboarding-note">Podés cambiarlo desde ajustes</p>
     </div>
   </div>
 
   <!-- ======================== TUTORIAL OVERLAY ======================== -->
   <div class="tutorial-overlay" id="tutorialOverlay">
     <div class="tutorial-card">
-      <button class="tc-close" onclick="closeTutorial()">âœ•</button>
-      <div class="tc-icon" id="tutIcon">ðŸŒ¸</div>
-      <h3 id="tutTitle">Bienvenida a VÃ­nculo</h3>
+      <button class="tc-close" onclick="closeTutorial()">✕</button>
+      <div class="tc-icon" id="tutIcon">🌸</div>
+      <h3 id="tutTitle">Bienvenida a Vínculo</h3>
       <p id="tutText">Este es un espacio seguro para que registres tus emociones y reflexiones.</p>
       <div class="tc-highlight" id="tutHighlight" style="display:none"><p></p></div>
       <div class="tc-actions">
@@ -1152,26 +1153,26 @@ button{font-family:inherit}
   <div class="app-container" id="app">
     <header class="app-header">
       <div class="header-left">
-        <span class="logo" id="appLogo" title="MantenÃ© presionado 3s para eliminar todo">VÃ­nculo ðŸŒ¿</span>
+        <span class="logo" id="appLogo" title="Mantené presionado 3s para eliminar todo">Vínculo 🌿</span>
       </div>
       <div class="header-actions">
         <button class="header-btn" onclick="togDarkTheme()" id="headerDarkBtn" title="Cambiar tema"><i class="fas fa-moon"></i></button>
-        <button class="header-btn" onclick="openSafety()" title="Â¿NecesitÃ¡s ayuda?">ðŸ†˜</button>
-        <button class="header-btn" onclick="openTerms()" title="TÃ©rminos">ðŸ“‹</button>
-        <button class="header-btn" onclick="openSettings()" title="Ajustes">âš™ï¸</button>
+        <button class="header-btn" onclick="openSafety()" title="¿Necesitás ayuda?">🆘</button>
+        <button class="header-btn" onclick="openTerms()" title="Términos">📋</button>
+        <button class="header-btn" onclick="openSettings()" title="Ajustes">⚙️</button>
       </div>
     </header>
 
   <!-- Alert Badge -->
-  <div class="alert-badge" id="alertBadge">âš ï¸ SituaciÃ³n de riesgo detectada</div>
+  <div class="alert-badge" id="alertBadge">⚠️ Situación de riesgo detectada</div>
 
   <!-- ===== HOME ===== -->
   <div class="screen active" id="scrHome">
-    <div class="greeting"><h1 id="greetText">Hola ðŸ’œ</h1><p id="greetDate"></p></div>
+    <div class="greeting"><h1 id="greetText">Hola 💜</h1><p id="greetDate"></p></div>
 
-    <!-- SemÃ¡foro del dÃ­a -->
+    <!-- Semáforo del día -->
     <div class="semaforo-card" id="homeSemaforo">
-      <h3>ðŸš¦ Tu semÃ¡foro de hoy</h3>
+      <h3>🚦 Tu semáforo de hoy</h3>
       <div class="semaforo-options">
         <div class="semaforo-opt verde" onclick="pickTodaySem('verde')">
           <div class="so-dot"></div>
@@ -1195,31 +1196,31 @@ button{font-family:inherit}
     <div class="stats-row">
       <div class="stat-card"><div class="stat-num" id="stEntries">0</div><div class="stat-lbl">Registros</div></div>
       <div class="stat-card"><div class="stat-num" id="stWeek">0</div><div class="stat-lbl">Esta semana</div></div>
-      <div class="stat-card"><div class="stat-num" id="stDays">0</div><div class="stat-lbl">DÃ­as activos</div></div>
+      <div class="stat-card"><div class="stat-num" id="stDays">0</div><div class="stat-lbl">Días activos</div></div>
     </div>
 
     <div class="vinculo-card" id="homeVinculo">
       <h3>Tu ritmo emocional</h3>
       <div class="vinculo-ring">
-        <div class="ring" id="vRing" style="--ring-pct:0%"><span id="vPct">â€”</span></div>
-        <div class="vinculo-text"><p id="vMsg">AÃºn no empezaste. No hay apuro. Cuando estÃ©s lista, este espacio te espera.</p></div>
+        <div class="ring" id="vRing" style="--ring-pct:0%"><span id="vPct">—</span></div>
+        <div class="vinculo-text"><p id="vMsg">Aún no empezaste. No hay apuro. Cuando estés lista, este espacio te espera.</p></div>
       </div>
       <div class="vinculo-context" id="vContext"></div>
     </div>
 
-    <button class="btn-primary" onclick="go('register')" id="homeRegisterBtn"><span style="font-size:1.15rem">+</span> Registrar situaciÃ³n</button>
-    <p class="microcopy">No hace falta tener todo claro para empezar ðŸŒ¿</p>
+    <button class="btn-primary" onclick="go('register')" id="homeRegisterBtn"><span style="font-size:1.15rem">+</span> Registrar situación</button>
+    <p class="microcopy">No hace falta tener todo claro para empezar 🌿</p>
 
     <!-- Today quick view -->
     <div class="today-semaforo" id="todayQuick">
-      <h4>ðŸ“ Registros de hoy</h4>
-      <div id="todayEntries"><p style="font-size:.82rem;color:var(--text-muted);text-align:center;padding:8px">Sin registros aÃºn</p></div>
+      <h4>📝 Registros de hoy</h4>
+      <div id="todayEntries"><p style="font-size:.82rem;color:var(--text-muted);text-align:center;padding:8px">Sin registros aún</p></div>
     </div>
   </div>
 
   <!-- ===== REGISTER ===== -->
   <div class="screen" id="scrRegister">
-    <h2 class="screen-title">Registrar situaciÃ³n</h2>
+    <h2 class="screen-title">Registrar situación</h2>
     <p class="screen-subtitle">Tomate tu tiempo. No hay respuestas correctas ni incorrectas.</p>
 
     <div class="step-bar">
@@ -1227,98 +1228,98 @@ button{font-family:inherit}
       <div class="step-dot" id="step2"></div>
       <div class="step-dot" id="step3"></div>
       <div class="step-dot" id="step4"></div>
-      <span class="step-label" id="stepLabel">1 de 4 â€” SemÃ¡foro</span>
+      <span class="step-label" id="stepLabel">1 de 4 — Semáforo</span>
     </div>
 
-    <!-- STEP 1: SemÃ¡foro -->
+    <!-- STEP 1: Semáforo -->
     <div id="regStep1">
       <div class="reg-semaforo" id="regSemaforo">
-        <h3>Â¿QuÃ© color le ponÃ©s a esta situaciÃ³n?</h3>
-        <p class="rs-sub">ElegÃ­ el semÃ¡foro que mejor represente lo que sentÃ­s</p>
+        <h3>¿Qué color le ponés a esta situación?</h3>
+        <p class="rs-sub">Elegí el semáforo que mejor represente lo que sentís</p>
         <div class="reg-sem-options">
           <div class="reg-sem-opt verde" onclick="pickRegSem('verde', this)">
-            <span class="rso-icon">ðŸ’š</span>
+            <span class="rso-icon">💚</span>
             <span class="rso-label">Verde</span>
-            <span class="rso-desc">Me hace bien / es liviano / puedo estar ahÃ­</span>
+            <span class="rso-desc">Me hace bien / es liviano / puedo estar ahí</span>
           </div>
           <div class="reg-sem-opt amarillo" onclick="pickRegSem('amarillo', this)">
-            <span class="rso-icon">ðŸ’›</span>
+            <span class="rso-icon">💛</span>
             <span class="rso-label">Amarillo</span>
             <span class="rso-desc">Me genera ruido / incomodidad leve. Puedo sostenerlo, pero algo no me cierra</span>
           </div>
           <div class="reg-sem-opt rojo" onclick="pickRegSem('rojo', this)">
-            <span class="rso-icon">â¤ï¸ðŸ©¹</span>
+            <span class="rso-icon">❤️🩹</span>
             <span class="rso-label">Rojo</span>
-            <span class="rso-desc">Me duele / me desborda / no sÃ© cÃ³mo pararme</span>
+            <span class="rso-desc">Me duele / me desborda / no sé cómo pararme</span>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="form-label">Â¿QuÃ© pasÃ³? <span class="hint">DescribÃ­ la situaciÃ³n con tus palabras</span></label>
-        <textarea class="form-textarea" id="regQue" placeholder="Hoy pasÃ³ queâ€¦" rows="3"></textarea>
+        <label class="form-label">¿Qué pasó? <span class="hint">Describí la situación con tus palabras</span></label>
+        <textarea class="form-textarea" id="regQue" placeholder="Hoy pasó que…" rows="3"></textarea>
       </div>
 
       <div class="form-group">
-        <label class="form-label">Â¿QuÃ© pensÃ©? <span class="hint">Â¿QuÃ© pasÃ³ por mi mente en ese momento?</span></label>
-        <textarea class="form-textarea" id="regPense" placeholder="PensÃ© queâ€¦" rows="2"></textarea>
+        <label class="form-label">¿Qué pensé? <span class="hint">¿Qué pasó por mi mente en ese momento?</span></label>
+        <textarea class="form-textarea" id="regPense" placeholder="Pensé que…" rows="2"></textarea>
       </div>
 
       <div class="form-group">
-        <label class="form-label">Â¿QuÃ© necesitÃ©? <span class="hint">Â¿QuÃ© necesitaba y no dije o no hice?</span></label>
-        <textarea class="form-textarea" id="regNecesite" placeholder="Necesitabaâ€¦" rows="2"></textarea>
+        <label class="form-label">¿Qué necesité? <span class="hint">¿Qué necesitaba y no dije o no hice?</span></label>
+        <textarea class="form-textarea" id="regNecesite" placeholder="Necesitaba…" rows="2"></textarea>
       </div>
 
-      <button class="btn-primary" onclick="nextRegStep(2)">Seguir â†’</button>
+      <button class="btn-primary" onclick="nextRegStep(2)">Seguir →</button>
     </div>
 
     <!-- STEP 2: Emociones y chips -->
     <div id="regStep2" style="display:none">
       <div class="form-group">
-        <label class="form-label">Â¿CÃ³mo te sentiste?</label>
+        <label class="form-label">¿Cómo te sentiste?</label>
         <div class="form-emojis" style="display:flex;gap:10px;flex-wrap:wrap">
-          <button type="button" class="form-emoji" data-f="triste" onclick="pickFeeling(this)" >ðŸ˜¢</button>
-          <button type="button" class="form-emoji" data-f="enojada" onclick="pickFeeling(this)" >ðŸ˜¤</button>
-          <button type="button" class="form-emoji" data-f="confundida" onclick="pickFeeling(this)" >ðŸ˜•</button>
-          <button type="button" class="form-emoji" data-f="asustada" onclick="pickFeeling(this)" >ðŸ˜¨</button>
-          <button type="button" class="form-emoji" data-f="culpa" onclick="pickFeeling(this)" >ðŸ˜ž</button>
-          <button type="button" class="form-emoji" data-f="bien" onclick="pickFeeling(this)" >ðŸ˜Š</button>
-          <button type="button" class="form-emoji" data-f="calma" onclick="pickFeeling(this)" >ðŸ˜Œ</button>
-          <button type="button" class="form-emoji" data-f="amor" onclick="pickFeeling(this)" >ðŸ¥°</button>
+          <button type="button" class="form-emoji" data-f="triste" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">😢</button>
+          <button type="button" class="form-emoji" data-f="enojada" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">😤</button>
+          <button type="button" class="form-emoji" data-f="confundida" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">😕</button>
+          <button type="button" class="form-emoji" data-f="asustada" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">😨</button>
+          <button type="button" class="form-emoji" data-f="culpa" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">😞</button>
+          <button type="button" class="form-emoji" data-f="bien" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">😊</button>
+          <button type="button" class="form-emoji" data-f="calma" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">😌</button>
+          <button type="button" class="form-emoji" data-f="amor" onclick="pickFeeling(this)" style="width:48px;height:48px;border:2px solid var(--stone);border-radius:var(--radius-md);background:var(--white);font-size:1.4rem;cursor:pointer;transition:all .3s;display:grid;place-items:center">🥰</button>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="form-label">Â¿QuÃ© hizo la otra persona? <span class="hint">(podÃ©s elegir mÃ¡s de una)</span></label>
+        <label class="form-label">¿Qué hizo la otra persona? <span class="hint">(podés elegir más de una)</span></label>
         <div class="chips-container" id="chipOtra">
-          <button type="button" class="chip" data-c="me_apoyo" onclick="togChip(this,'otra')">ðŸ’š Me apoyÃ³</button>
-          <button type="button" class="chip" data-c="me_ignoro" onclick="togChip(this,'otra')">ðŸ™ˆ Me ignorÃ³</button>
-          <button type="button" class="chip" data-c="me_critico" onclick="togChip(this,'otra')">ðŸ’¬ Me criticÃ³</button>
-          <button type="button" class="chip" data-c="me_hizo_dudar" onclick="togChip(this,'otra')">ðŸŒ€ Me hizo dudar</button>
-          <button type="button" class="chip" data-c="fue_indiferente" onclick="togChip(this,'otra')">ðŸ˜¶ Fue indiferente</button>
-          <button type="button" class="chip" data-c="me_controlÃ³" onclick="togChip(this,'otra')">ðŸ”’ Me controlÃ³</button>
-          <button type="button" class="chip" data-c="me_halo_culpa" onclick="togChip(this,'otra')">ðŸ˜” Me hizo sentir culpa</button>
-          <button type="button" class="chip" data-c="fue_cariÃ±oso" onclick="togChip(this,'otra')">ðŸ¤— Fue cariÃ±oso/a</button>
-          <button type="button" class="chip" data-c="me_golpeo" onclick="togChip(this,'otra')" style="border-color:var(--alert);color:var(--alert-dark)">ðŸš¨ Me golpeÃ³ o agrediÃ³ fÃ­sicamente</button>
+          <button type="button" class="chip" data-c="me_apoyo" onclick="togChip(this,'otra')">💚 Me apoyó</button>
+          <button type="button" class="chip" data-c="me_ignoro" onclick="togChip(this,'otra')">🙈 Me ignoró</button>
+          <button type="button" class="chip" data-c="me_critico" onclick="togChip(this,'otra')">💬 Me criticó</button>
+          <button type="button" class="chip" data-c="me_hizo_dudar" onclick="togChip(this,'otra')">🌀 Me hizo dudar</button>
+          <button type="button" class="chip" data-c="fue_indiferente" onclick="togChip(this,'otra')">😶 Fue indiferente</button>
+          <button type="button" class="chip" data-c="me_controló" onclick="togChip(this,'otra')">🔒 Me controló</button>
+          <button type="button" class="chip" data-c="me_halo_culpa" onclick="togChip(this,'otra')">😔 Me hizo sentir culpa</button>
+          <button type="button" class="chip" data-c="fue_cariñoso" onclick="togChip(this,'otra')">🤗 Fue cariñoso/a</button>
+          <button type="button" class="chip" data-c="me_golpeo" onclick="togChip(this,'otra')" style="border-color:var(--alert);color:var(--alert-dark)">🚨 Me golpeó o agredió físicamente</button>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="form-label">Â¿QuÃ© hiciste vos? <span class="hint">(tambiÃ©n podÃ©s elegir mÃ¡s de una)</span></label>
+        <label class="form-label">¿Qué hiciste vos? <span class="hint">(también podés elegir más de una)</span></label>
         <div class="chips-container" id="chipQueHice">
-          <button type="button" class="chip" data-c="hable" onclick="togChip(this,'hice')">ðŸ—£ï¸ HablÃ©</button>
-          <button type="button" class="chip" data-c="me_calle" onclick="togChip(this,'hice')">ðŸ¤ Me callÃ©</button>
-          <button type="button" class="chip" data-c="puse_limite" onclick="togChip(this,'hice')">âœ‹ Puse un lÃ­mite</button>
-          <button type="button" class="chip" data-c="aguante" onclick="togChip(this,'hice')">ðŸ˜¶ AguantÃ©</button>
-          <button type="button" class="chip" data-c="me_fui" onclick="togChip(this,'hice')">ðŸš¶ Me fui</button>
-          <button type="button" class="chip" data-c="llore" onclick="togChip(this,'hice')">ðŸ˜¢ LlorÃ©</button>
-          <button type="button" class="chip" data-c="intente_comprender" onclick="togChip(this,'hice')">ðŸ’­ IntentÃ© comprender</button>
+          <button type="button" class="chip" data-c="hable" onclick="togChip(this,'hice')">🗣️ Hablé</button>
+          <button type="button" class="chip" data-c="me_calle" onclick="togChip(this,'hice')">🤐 Me callé</button>
+          <button type="button" class="chip" data-c="puse_limite" onclick="togChip(this,'hice')">✋ Puse un límite</button>
+          <button type="button" class="chip" data-c="aguante" onclick="togChip(this,'hice')">😶 Aguanté</button>
+          <button type="button" class="chip" data-c="me_fui" onclick="togChip(this,'hice')">🚶 Me fui</button>
+          <button type="button" class="chip" data-c="llore" onclick="togChip(this,'hice')">😢 Lloré</button>
+          <button type="button" class="chip" data-c="intente_comprender" onclick="togChip(this,'hice')">💭 Intenté comprender</button>
         </div>
       </div>
 
       <div style="display:flex;gap:10px">
-        <button class="btn-clear" onclick="nextRegStep(1)" style="flex:1;padding:12px">â† AtrÃ¡s</button>
-        <button class="btn-primary" onclick="nextRegStep(3)" style="flex:2;margin-bottom:0">Seguir â†’</button>
+        <button class="btn-clear" onclick="nextRegStep(1)" style="flex:1;padding:12px">← Atrás</button>
+        <button class="btn-primary" onclick="nextRegStep(3)" style="flex:2;margin-bottom:0">Seguir →</button>
       </div>
     </div>
 
@@ -1326,39 +1327,39 @@ button{font-family:inherit}
     <div id="regStep3" style="display:none">
       <div class="form-group">
         <label class="form-label">Notas adicionales <span class="hint">(opcional)</span></label>
-        <textarea class="form-textarea" id="regNotas" placeholder="Algo mÃ¡s que quieras agregarâ€¦" rows="3"></textarea>
+        <textarea class="form-textarea" id="regNotas" placeholder="Algo más que quieras agregar…" rows="3"></textarea>
       </div>
 
       <div class="mirror-section visible" id="mirrorStep3">
-        <div class="ms-icon">ðŸªž</div>
+        <div class="ms-icon">🪞</div>
         <h3>Modo Espejo</h3>
-        <p>Esta es tu oportunidad de mirarte con compasiÃ³n. Â¿QuÃ© le dirÃ­asâ€¦</p>
+        <p>Esta es tu oportunidad de mirarte con compasión. ¿Qué le dirías…</p>
         <div class="mirror-tabs">
           <button class="mirror-tab active" data-mt="otra" onclick="switchMirrorTab(this)">A alguien que quiero</button>
-          <button class="mirror-tab" data-mt="yo_pasado" onclick="switchMirrorTab(this)">A mi yo de hace un aÃ±o</button>
+          <button class="mirror-tab" data-mt="yo_pasado" onclick="switchMirrorTab(this)">A mi yo de hace un año</button>
           <button class="mirror-tab" data-mt="yo_futuro" onclick="switchMirrorTab(this)">A mi yo del futuro</button>
         </div>
-        <textarea class="mirror-input" id="mirrorInput" placeholder="Le dirÃ­a queâ€¦" rows="3"></textarea>
-        <div class="mirror-lock-info" id="mirrorLockInfo">ðŸ”’ Este mensaje se guarda para que lo releas cuando lo necesites</div>
+        <textarea class="mirror-input" id="mirrorInput" placeholder="Le diría que…" rows="3"></textarea>
+        <div class="mirror-lock-info" id="mirrorLockInfo">🔒 Este mensaje se guarda para que lo releas cuando lo necesites</div>
       </div>
 
       <div style="display:flex;gap:10px">
-        <button class="btn-clear" onclick="nextRegStep(2)" style="flex:1;padding:12px">â† AtrÃ¡s</button>
-        <button class="btn-primary" onclick="doSave()" style="flex:2;margin-bottom:0">Guardar registro ðŸ’œ</button>
+        <button class="btn-clear" onclick="nextRegStep(2)" style="flex:1;padding:12px">← Atrás</button>
+        <button class="btn-primary" onclick="doSave()" style="flex:2;margin-bottom:0">Guardar registro 💜</button>
       </div>
     </div>
 
     <!-- STEP 4: Feedback + Resumen -->
     <div id="regStep4" style="display:none">
       <div class="emotional-feedback visible" id="emFeedback">
-        <div class="ef-icon">ðŸ’œ</div>
+        <div class="ef-icon">💜</div>
         <h3 id="efTitle">Gracias por registrarlo</h3>
-        <p id="efText">Lo que sentiste es vÃ¡lido.</p>
+        <p id="efText">Lo que sentiste es válido.</p>
       </div>
 
       <div style="margin-top:16px">
-        <button class="btn-primary" onclick="go('home')">Volver al inicio ðŸ </button>
-        <button class="btn-primary" onclick="nextRegStep(1);resetReg();" style="background:var(--beige);color:var(--text-primary);border:2px solid var(--stone)">Registrar otra situaciÃ³n +</button>
+        <button class="btn-primary" onclick="go('home')">Volver al inicio 🏠</button>
+        <button class="btn-primary" onclick="nextRegStep(1);resetReg();" style="background:var(--beige);color:var(--text-primary);border:2px solid var(--stone)">Registrar otra situación +</button>
       </div>
 
       <div class="mirror-letters" id="mirrorLettersPreview"></div>
@@ -1368,57 +1369,57 @@ button{font-family:inherit}
   <!-- ===== WEEKLY VIEW ===== -->
   <div class="screen" id="scrWeekly">
     <div class="week-header">
-      <h3>ðŸ“… Tu semana</h3>
+      <h3>📅 Tu semana</h3>
       <div class="week-nav">
-        <button onclick="changeWeek(-1)">â—€</button>
-        <button onclick="changeWeek(1)">â–¶</button>
+        <button onclick="changeWeek(-1)">◀</button>
+        <button onclick="changeWeek(1)">▶</button>
       </div>
     </div>
     <p class="screen-subtitle" id="weekLabel">Semana del 1 al 7 de mayo</p>
 
     <div class="week-grid">
       <div class="week-grid-header">
-        <span>DÃ­a</span>
-        <span>ðŸ’š</span>
-        <span>ðŸ’›</span>
-        <span>â¤ï¸ðŸ©¹</span>
+        <span>Día</span>
+        <span>💚</span>
+        <span>💛</span>
+        <span>❤️🩹</span>
         <span></span>
       </div>
       <div id="weekGridBody"></div>
     </div>
 
     <div class="color-dist">
-      <h3>ðŸ“Š DistribuciÃ³n de colores</h3>
+      <h3>📊 Distribución de colores</h3>
       <div class="cd-bar"><span class="cd-label" style="color:var(--sage-dark)">Verde</span><div class="cd-track"><div class="cd-fill verde" id="cdGreen" style="width:0%"></div></div><span class="cd-pct" id="cdGreenPct">0%</span></div>
       <div class="cd-bar"><span class="cd-label" style="color:var(--honey-dark)">Amarillo</span><div class="cd-track"><div class="cd-fill amarillo" id="cdYellow" style="width:0%"></div></div><span class="cd-pct" id="cdYellowPct">0%</span></div>
       <div class="cd-bar"><span class="cd-label" style="color:var(--blush-dark)">Rojo</span><div class="cd-track"><div class="cd-fill rojo" id="cdRed" style="width:0%"></div></div><span class="cd-pct" id="cdRedPct">0%</span></div>
     </div>
 
     <div class="phrase-week">
-      <div class="pw-emoji">ðŸ•Šï¸</div>
+      <div class="pw-emoji">🕊️</div>
       <p class="pw-text" id="phraseText">"No es tu culpa querer estar bien."</p>
-      <p class="pw-author">â€” Frase de sostÃ©n de la semana</p>
+      <p class="pw-author">— Frase de sostén de la semana</p>
     </div>
 
     <div class="reflection-card">
-      <h3>ðŸªž ReflexiÃ³n final ðŸ’œ</h3>
+      <h3>🪞 Reflexión final 💜</h3>
       <div class="reflection-q">
-        <label><span class="rq-heart">â™¥</span> Â¿En quÃ© situaciones aparecen mÃ¡s â¤ï¸ðŸ©¹ rojos?</label>
-        <textarea id="refRed" placeholder="NotÃ© que los rojos aparecen cuandoâ€¦" rows="2" oninput="saveReflection()"></textarea>
+        <label><span class="rq-heart">♥</span> ¿En qué situaciones aparecen más ❤️🩹 rojos?</label>
+        <textarea id="refRed" placeholder="Noté que los rojos aparecen cuando…" rows="2" oninput="saveReflection()"></textarea>
       </div>
       <div class="reflection-q">
-        <label><span class="rq-heart">â™¥</span> Â¿Hay algo que se repite en los ðŸ’› amarillos?</label>
-        <textarea id="refYellow" placeholder="Los amarillos suelen tener en comÃºnâ€¦" rows="2" oninput="saveReflection()"></textarea>
+        <label><span class="rq-heart">♥</span> ¿Hay algo que se repite en los 💛 amarillos?</label>
+        <textarea id="refYellow" placeholder="Los amarillos suelen tener en común…" rows="2" oninput="saveReflection()"></textarea>
       </div>
       <div class="reflection-q">
-        <label><span class="rq-heart">â™¥</span> Â¿QuÃ© tienen en comÃºn mis ðŸ’š verdes?</label>
-        <textarea id="refGreen" placeholder="Mis verdes se parecen en queâ€¦" rows="2" oninput="saveReflection()"></textarea>
+        <label><span class="rq-heart">♥</span> ¿Qué tienen en común mis 💚 verdes?</label>
+        <textarea id="refGreen" placeholder="Mis verdes se parecen en que…" rows="2" oninput="saveReflection()"></textarea>
       </div>
       <div class="reflection-q">
-        <label><span class="rq-heart">â™¥</span> Â¿QuÃ© me quiero recordar a mÃ­ misma para la prÃ³xima semana?</label>
-        <textarea id="refNext" placeholder="Quiero recordar queâ€¦" rows="2" oninput="saveReflection()"></textarea>
+        <label><span class="rq-heart">♥</span> ¿Qué me quiero recordar a mí misma para la próxima semana?</label>
+        <textarea id="refNext" placeholder="Quiero recordar que…" rows="2" oninput="saveReflection()"></textarea>
       </div>
-      <button class="reflection-save" onclick="saveReflection();toast('ReflexiÃ³n guardada ðŸ’œ')">Guardar reflexiÃ³n ðŸ’œ</button>
+      <button class="reflection-save" onclick="saveReflection();toast('Reflexión guardada 💜')">Guardar reflexión 💜</button>
     </div>
   </div>
 
@@ -1428,84 +1429,84 @@ button{font-family:inherit}
     <p class="screen-subtitle">Mirar sin juzgar. Observar para entender.</p>
 
     <div id="patternsBox">
-      <div class="empty-state" id="patEmpty"><div class="es-icon">ðŸŒ¿</div><h3>AÃºn no hay huellas</h3><p>EmpezÃ¡ a registrar situaciones y vamos encontrando juntos quÃ© se repite.</p></div>
+      <div class="empty-state" id="patEmpty"><div class="es-icon">🌿</div><h3>Aún no hay huellas</h3><p>Empezá a registrar situaciones y vamos encontrando juntos qué se repite.</p></div>
     </div>
 
     <div class="timeline-section">
-      <h3>ðŸ—ºï¸ Mapa de tu camino</h3>
+      <h3>🗺️ Mapa de tu camino</h3>
       <div class="organic-timeline" id="timelineBox">
-        <div class="empty-state" id="tlEmpty"><div class="es-icon">ðŸŒ±</div><h3>Tu mapa se construye paso a paso</h3><p>Cada registro aÃ±ade una huella en tu camino.</p></div>
+        <div class="empty-state" id="tlEmpty"><div class="es-icon">🌱</div><h3>Tu mapa se construye paso a paso</h3><p>Cada registro añade una huella en tu camino.</p></div>
       </div>
     </div>
 
     <div style="margin-top:22px;display:flex;justify-content:flex-end;gap:8px">
-      <button class="btn-clear" onclick="doExportPDF()">ðŸ“„ Exportar para terapia</button>
-      <button class="btn-clear" onclick="confirmClear()">ðŸ—‘ï¸ Borrar todo</button>
+      <button class="btn-clear" onclick="doExportPDF()">📄 Exportar para terapia</button>
+      <button class="btn-clear" onclick="confirmClear()">🗑️ Borrar todo</button>
     </div>
   </div>
 
   <!-- ===== LEARN ===== -->
   <div class="screen" id="scrLearn">
     <h2 class="screen-title">Aprender</h2>
-    <p class="screen-subtitle">Conocer ayuda a entender. Sin presiÃ³n, sin urgencia.</p>
+    <p class="screen-subtitle">Conocer ayuda a entender. Sin presión, sin urgencia.</p>
 
     <div class="learn-card" onclick="togLearn(this)">
-      <div class="learn-header"><div class="learn-icon lila">ðŸŒ€</div><div class="learn-info"><h3>Gaslighting</h3><span class="learn-meta">3 min Â· lectura suave</span></div></div>
-      <div class="learn-detail"><p>Es cuando alguien te hace dudar de tu propia percepciÃ³n o memoria. Puede ser sutil: "Eso nunca pasÃ³", "EstÃ¡s exagerando".</p><div class="learn-tip">ðŸ’¡ Si te pasa seguido de sentir que "estÃ¡s loca", puede valer la pena mirarlo.</div></div>
+      <div class="learn-header"><div class="learn-icon lila">🌀</div><div class="learn-info"><h3>Gaslighting</h3><span class="learn-meta">3 min · lectura suave</span></div></div>
+      <div class="learn-detail"><p>Es cuando alguien te hace dudar de tu propia percepción o memoria. Puede ser sutil: "Eso nunca pasó", "Estás exagerando".</p><div class="learn-tip">💡 Si te pasa seguido de sentir que "estás loca", puede valer la pena mirarlo.</div></div>
     </div>
     <div class="learn-card" onclick="togLearn(this)">
-      <div class="learn-header"><div class="learn-icon rosa">ðŸ’</div><div class="learn-info"><h3>Love Bombing</h3><span class="learn-meta">3 min Â· lectura suave</span></div></div>
-      <div class="learn-detail"><p>InundaciÃ³n rÃ¡pida de atenciÃ³n y cariÃ±o. Puede sentirse increÃ­ble, pero a veces genera dependencia.</p><div class="learn-tip">ðŸ’¡ El amor genuino respeta tu ritmo. No necesita apurarse.</div></div>
+      <div class="learn-header"><div class="learn-icon rosa">💝</div><div class="learn-info"><h3>Love Bombing</h3><span class="learn-meta">3 min · lectura suave</span></div></div>
+      <div class="learn-detail"><p>Inundación rápida de atención y cariño. Puede sentirse increíble, pero a veces genera dependencia.</p><div class="learn-tip">💡 El amor genuino respeta tu ritmo. No necesita apurarse.</div></div>
     </div>
     <div class="learn-card" onclick="togLearn(this)">
-      <div class="learn-header"><div class="learn-icon sage">âœ‹</div><div class="learn-info"><h3>LÃ­mites saludables</h3><span class="learn-meta">4 min Â· lectura suave</span></div></div>
-      <div class="learn-detail"><p>Poner lÃ­mites no es egoÃ­smo. Es decir: "esto me hace daÃ±o". Un "no" es una respuesta completa.</p><div class="learn-tip">ðŸ’¡ EmpezÃ¡ con lÃ­mites pequeÃ±os. Cada "no" es un acto de cuidado propio.</div></div>
+      <div class="learn-header"><div class="learn-icon sage">✋</div><div class="learn-info"><h3>Límites saludables</h3><span class="learn-meta">4 min · lectura suave</span></div></div>
+      <div class="learn-detail"><p>Poner límites no es egoísmo. Es decir: "esto me hace daño". Un "no" es una respuesta completa.</p><div class="learn-tip">💡 Empezá con límites pequeños. Cada "no" es un acto de cuidado propio.</div></div>
     </div>
     <div class="learn-card" onclick="togLearn(this)">
-      <div class="learn-header"><div class="learn-icon honey">ðŸŽ­</div><div class="learn-info"><h3>Ciclo de la violencia</h3><span class="learn-meta">4 min Â· lectura suave</span></div></div>
-      <div class="learn-detail"><p>Suele seguir un patrÃ³n: tensiÃ³n â†’ explosiÃ³n â†’ luna de miel. Ambos son reales.</p><div class="learn-tip">ðŸ’¡ Los momentos buenos no borran los malos. Ambos existen al mismo tiempo.</div></div>
+      <div class="learn-header"><div class="learn-icon honey">🎭</div><div class="learn-info"><h3>Ciclo de la violencia</h3><span class="learn-meta">4 min · lectura suave</span></div></div>
+      <div class="learn-detail"><p>Suele seguir un patrón: tensión → explosión → luna de miel. Ambos son reales.</p><div class="learn-tip">💡 Los momentos buenos no borran los malos. Ambos existen al mismo tiempo.</div></div>
     </div>
     <div class="learn-card" onclick="togLearn(this)">
-      <div class="learn-header"><div class="learn-icon lila">ðŸ”—</div><div class="learn-info"><h3>Dependencia emocional</h3><span class="learn-meta">3 min Â· lectura suave</span></div></div>
-      <div class="learn-detail"><p>Cuando sentÃ­s que no podÃ©s estar sin la otra persona. No es amor, es miedo.</p><div class="learn-tip">ðŸ’¡ Tu bienestar es tuyo. Nadie deberÃ­a ser tu Ãºnica fuente de felicidad.</div></div>
+      <div class="learn-header"><div class="learn-icon lila">🔗</div><div class="learn-info"><h3>Dependencia emocional</h3><span class="learn-meta">3 min · lectura suave</span></div></div>
+      <div class="learn-detail"><p>Cuando sentís que no podés estar sin la otra persona. No es amor, es miedo.</p><div class="learn-tip">💡 Tu bienestar es tuyo. Nadie debería ser tu única fuente de felicidad.</div></div>
     </div>
     <div class="learn-card" onclick="togLearn(this)">
-      <div class="learn-header"><div class="learn-icon rosa">ðŸŒ±</div><div class="learn-info"><h3>Autocuidado emocional</h3><span class="learn-meta">3 min Â· lectura suave</span></div></div>
-      <div class="learn-detail"><p>No es solo relajaciÃ³n. Es poner lÃ­mites, decir que no, pedir ayuda.</p><div class="learn-tip">ðŸ’¡ EmpezÃ¡ por algo pequeÃ±o: hoy preguntate "Â¿quÃ© necesito?" y escuchÃ¡.</div></div>
+      <div class="learn-header"><div class="learn-icon rosa">🌱</div><div class="learn-info"><h3>Autocuidado emocional</h3><span class="learn-meta">3 min · lectura suave</span></div></div>
+      <div class="learn-detail"><p>No es solo relajación. Es poner límites, decir que no, pedir ayuda.</p><div class="learn-tip">💡 Empezá por algo pequeño: hoy preguntate "¿qué necesito?" y escuchá.</div></div>
     </div>
   </div>
 
   <!-- ===== NETWORK ===== -->
   <div class="screen" id="scrNetwork">
     <h2 class="screen-title">Red de apoyo</h2>
-    <p class="screen-subtitle">No tenÃ©s que hacerlo sola.</p>
+    <p class="screen-subtitle">No tenés que hacerlo sola.</p>
 
     <div class="accompaniment-toggle">
-      <div class="accomp-text"><h4>ðŸ¤ Modo AcompaÃ±amiento</h4><p>ActivÃ¡ para ver sugerencias de apoyo</p></div>
+      <div class="accomp-text"><h4>🤝 Modo Acompañamiento</h4><p>Activá para ver sugerencias de apoyo</p></div>
       <div class="toggle-switch" id="accompToggle" onclick="togAccomp()"></div>
     </div>
-    <div class="accomp-msg" id="accompMsg">ðŸ’œ Cuando lo necesites, podÃ©s apoyarte en alguien de confianza.</div>
+    <div class="accomp-msg" id="accompMsg">💜 Cuando lo necesites, podés apoyarte en alguien de confianza.</div>
 
     <div class="guided-messages">
-      <h3>ðŸ’¬ Mensajes para compartir</h3>
-      <p style="font-size:.8rem;color:var(--text-muted);margin-bottom:10px">TocÃ¡ uno para copiarlo</p>
-      <div class="message-bubble" onclick="copyMsg(this)">Â¿Te puedo contar algo que me hizo sentir incÃ³moda?</div>
-      <div class="message-bubble" onclick="copyMsg(this)">Necesito hablar con alguien, Â¿tenÃ©s un momento?</div>
-      <div class="message-bubble" onclick="copyMsg(this)">No sÃ© si estoy exagerando, pero algo me pasa y quiero contÃ¡rtelo.</div>
-      <div class="message-bubble" onclick="copyMsg(this)">Â¿Puedo pedirte un consejo sobre algo personal?</div>
-      <div class="message-bubble" onclick="copyMsg(this)">Estoy pasando por un momento difÃ­cil y necesito compaÃ±Ã­a.</div>
+      <h3>💬 Mensajes para compartir</h3>
+      <p style="font-size:.8rem;color:var(--text-muted);margin-bottom:10px">Tocá uno para copiarlo</p>
+      <div class="message-bubble" onclick="copyMsg(this)">¿Te puedo contar algo que me hizo sentir incómoda?</div>
+      <div class="message-bubble" onclick="copyMsg(this)">Necesito hablar con alguien, ¿tenés un momento?</div>
+      <div class="message-bubble" onclick="copyMsg(this)">No sé si estoy exagerando, pero algo me pasa y quiero contártelo.</div>
+      <div class="message-bubble" onclick="copyMsg(this)">¿Puedo pedirte un consejo sobre algo personal?</div>
+      <div class="message-bubble" onclick="copyMsg(this)">Estoy pasando por un momento difícil y necesito compañía.</div>
     </div>
 
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
       <h3 style="font-size:.92rem; margin:0;">👥 Contactos de confianza</h3>
       <button onclick="openContactModal()" style="background:none;border:none;color:var(--lila-dark);font-size:.85rem;font-weight:600;cursor:pointer;">+ Agregar</button>
     </div>
     <div id="contactsContainer"></div>
 
     <button class="btn-primary" style="margin-top:12px" onclick="shareApp()">Compartir App</button>
-    <button class="btn-dont-know" style="margin-top:16px" onclick="openSafety()">ðŸ†˜ No sÃ© quÃ© hacer con esto</button>
-    <button class="btn-export" onclick="doExportPDF()">ðŸ“„ Exportar resumen para mi terapeuta</button>
-    <div class="privacy-msg"><span>ðŸ”’</span><p>Tus datos son tuyos. Vos decidÃ­s quÃ© compartir, con quiÃ©n y cuÃ¡ndo.</p></div>
+    <button class="btn-dont-know" style="margin-top:16px" onclick="openSafety()">🆘 No sé qué hacer con esto</button>
+    <button class="btn-export" onclick="doExportPDF()">📄 Exportar resumen para mi terapeuta</button>
+    <div class="privacy-msg"><span>🔒</span><p>Tus datos son tuyos. Vos decidís qué compartir, con quién y cuándo.</p></div>
   </div>
 
   <!-- ========== BOTTOM NAV - MEJORADA ========== -->
@@ -1546,7 +1547,7 @@ button{font-family:inherit}
 </div>
 
 <!-- Floating alert -->
-<button class="floating-alert" id="floatAlert" onclick="openSafety()">ðŸ†˜</button>
+<button class="floating-alert" id="floatAlert" onclick="openSafety()">🆘</button>
 
 <!-- Contact Modal -->
 <div class="safety-modal" id="contactModal">
@@ -1580,53 +1581,53 @@ button{font-family:inherit}
 <!-- Safety Modal -->
 <div class="safety-modal" id="safetyModal">
   <div class="safety-content">
-    <h2>ðŸ†˜ Â¿NecesitÃ¡s ayuda?</h2>
-    <p class="sc-sub">No estÃ¡s sola. Hay personas disponibles para acompaÃ±arte. Nada de esto es tu culpa.</p>
+    <h2>🆘 ¿Necesitás ayuda?</h2>
+    <p class="sc-sub">No estás sola. Hay personas disponibles para acompañarte. Nada de esto es tu culpa.</p>
     <div class="safety-section">
-      <h3>ðŸ“ž LÃ­neas de atenciÃ³n</h3>
-      <a href="tel:144" class="safety-phone"><span class="sp-icon">ðŸ“±</span><div class="sp-info"><h4>LÃ­nea 144</h4><p>Violencia de gÃ©nero Â· 24hs Â· Gratuito</p></div></a>
-      <a href="tel:102" class="safety-phone"><span class="sp-icon">ðŸ¥</span><div class="sp-info"><h4>LÃ­nea 102</h4><p>NiÃ±os, niÃ±as y adolescentes</p></div></a>
-      <a href="tel:911" class="safety-phone"><span class="sp-icon">ðŸš¨</span><div class="sp-info"><h4>911 â€” Emergencias</h4><p>Si estÃ¡s en peligro inmediato</p></div></a>
-      <a href="tel:08009990091" class="safety-phone"><span class="sp-icon">ðŸ’œ</span><div class="sp-info"><h4>0800-999-0091</h4><p>Violencia domÃ©stica</p></div></a>
+      <h3>📞 Líneas de atención</h3>
+      <a href="tel:144" class="safety-phone"><span class="sp-icon">📱</span><div class="sp-info"><h4>Línea 144</h4><p>Violencia de género · 24hs · Gratuito</p></div></a>
+      <a href="tel:102" class="safety-phone"><span class="sp-icon">🏥</span><div class="sp-info"><h4>Línea 102</h4><p>Niños, niñas y adolescentes</p></div></a>
+      <a href="tel:911" class="safety-phone"><span class="sp-icon">🚨</span><div class="sp-info"><h4>911 — Emergencias</h4><p>Si estás en peligro inmediato</p></div></a>
+      <a href="tel:08009990091" class="safety-phone"><span class="sp-icon">💜</span><div class="sp-info"><h4>0800-999-0091</h4><p>Violencia doméstica</p></div></a>
     </div>
-    <div class="safety-tip"><p><strong>ðŸ’œ RecordÃ¡:</strong> La violencia no es tu culpa. Ni fÃ­sica, ni psicolÃ³gica, ni econÃ³mica, ni sexual. MerecÃ©s estar donde te respeten.</p></div>
-    <div class="safety-tip"><p><strong>ðŸ“‹ SeÃ±ales:</strong><br>â€¢ Te da miedo su reacciÃ³n<br>â€¢ Te aÃ­sla de tu gente<br>â€¢ Te humilla o amenaza<br>â€¢ Controla tu telÃ©fono o dinero<br>â€¢ Te hace sentir culpable por todo</p></div>
-    <div class="safety-tip"><p><strong>ðŸ›¡ï¸ Plan de seguridad:</strong><br>â€¢ CÃ³digo con alguien de confianza<br>â€¢ Documentos en lugar seguro<br>â€¢ MemorizÃ¡ nÃºmeros de emergencia<br>â€¢ IdentificÃ¡ un lugar seguro</p></div>
-    <button class="btn-call" onclick="location.href='tel:144'">ðŸ“ž Llamar al 144 ahora</button>
-    <button class="btn-dismiss" onclick="closeSafety()">Cerrar â€” Estoy bien por ahora</button>
+    <div class="safety-tip"><p><strong>💜 Recordá:</strong> La violencia no es tu culpa. Ni física, ni psicológica, ni económica, ni sexual. Merecés estar donde te respeten.</p></div>
+    <div class="safety-tip"><p><strong>📋 Señales:</strong><br>• Te da miedo su reacción<br>• Te aísla de tu gente<br>• Te humilla o amenaza<br>• Controla tu teléfono o dinero<br>• Te hace sentir culpable por todo</p></div>
+    <div class="safety-tip"><p><strong>🛡️ Plan de seguridad:</strong><br>• Código con alguien de confianza<br>• Documentos en lugar seguro<br>• Memorizá números de emergencia<br>• Identificá un lugar seguro</p></div>
+    <button class="btn-call" onclick="location.href='tel:144'">📞 Llamar al 144 ahora</button>
+    <button class="btn-dismiss" onclick="closeSafety()">Cerrar — Estoy bien por ahora</button>
   </div>
 </div>
 
 <!-- Settings Modal -->
 <div class="settings-modal" id="settingsModal">
   <div class="settings-content">
-    <h2>âš™ï¸ Ajustes</h2>
+    <h2>⚙️ Ajustes</h2>
     <div class="setting-row">
-      <div class="setting-label"><span class="sl-icon">ðŸ‘¤</span><div class="setting-label"><span class="sl-icon">ðŸ‘¤</span><div class="sl-text"><h4>Tu nombre</h4><p id="settName">â€”</p></div></div>
+      <div class="setting-label"><span class="sl-icon">👤</span><div class="sl-text"><h4>Tu nombre</h4><p id="settName">—</p></div></div>
       <button class="btn-clear" onclick="changeName()">Cambiar</button>
     </div>
     <div class="setting-row">
-      <div class="setting-label"><span class="sl-icon">ðŸ”</span><div class="sl-text"><h4>Cifrado</h4><p>Tus datos estÃ¡n protegidos</p></div></div>
+      <div class="setting-label"><span class="sl-icon">🔐</span><div class="sl-text"><h4>Cifrado</h4><p>Tus datos están protegidos</p></div></div>
       <button class="btn-clear" onclick="changePINFlow()">Cambiar PIN</button>
     </div>
     <div class="setting-row">
-      <div class="setting-label"><span class="sl-icon">ðŸŒ™</span><div class="sl-text"><h4>Tema oscuro</h4><p>Ideal para usar de noche</p></div></div>
+      <div class="setting-label"><span class="sl-icon">🌙</span><div class="sl-text"><h4>Tema oscuro</h4><p>Ideal para usar de noche</p></div></div>
       <div class="toggle-switch" id="darkToggle" onclick="togDarkTheme()"></div>
     </div>
     <div class="setting-row">
-      <div class="setting-label"><span class="sl-icon">ðŸ‘ï¸</span><div class="sl-text"><h4>Modo discreto</h4><p>Cambia Ã­cono y tÃ­tulo</p></div></div>
+      <div class="setting-label"><span class="sl-icon">👁️</span><div class="sl-text"><h4>Modo discreto</h4><p>Cambia ícono y título</p></div></div>
       <div class="toggle-switch" id="discToggle" onclick="togDiscreet()"></div>
     </div>
     <div class="setting-row">
-      <div class="setting-label"><span class="sl-icon">ðŸ—‘ï¸</span><div class="sl-text"><h4>Eliminar todo</h4><p>Borrado permanente</p></div></div>
+      <div class="setting-label"><span class="sl-icon">🗑️</span><div class="sl-text"><h4>Eliminar todo</h4><p>Borrado permanente</p></div></div>
       <button class="btn-clear" onclick="confirmClear()" style="border-color:var(--blush);color:var(--blush-dark)">Eliminar</button>
     </div>
     <div class="setting-row">
-      <div class="setting-label"><span class="sl-icon">ðŸ“‹</span><div class="sl-text"><h4>TÃ©rminos</h4><p>Releer</p></div></div>
+      <div class="setting-label"><span class="sl-icon">📋</span><div class="sl-text"><h4>Términos</h4><p>Releer</p></div></div>
       <button class="btn-clear" onclick="openTerms()">Ver</button>
     </div>
     <div class="setting-row">
-      <div class="setting-label"><span class="sl-icon">ðŸ“š</span><div class="sl-text"><h4>Tutorial</h4><p>Ver tutorial de nuevo</p></div></div>
+      <div class="setting-label"><span class="sl-icon">📚</span><div class="sl-text"><h4>Tutorial</h4><p>Ver tutorial de nuevo</p></div></div>
       <button class="btn-clear" onclick="startTutorial()">Iniciar</button>
     </div>
   </div>
@@ -1640,9 +1641,9 @@ button{font-family:inherit}
 <!-- Pause Overlay -->
 <div class="pause-overlay" id="pauseOvl">
   <div class="pause-card">
-    <div class="pc-icon">ðŸµ</div>
-    <h3>HacÃ© una pausa suave</h3>
-    <p>Notamos que estÃ¡s escribiendo seguido. A veces, cuando algo pesa, las palabras salen rÃ¡pido. AcÃ¡ estamos. RespirÃ¡.</p>
+    <div class="pc-icon">🍵</div>
+    <h3>Hacé una pausa suave</h3>
+    <p>Notamos que estás escribiendo seguido. A veces, cuando algo pesa, las palabras salen rápido. Acá estamos. Respirá.</p>
     <div class="pc-timer" id="pauseTimer">5:00</div>
     <div class="pause-actions">
       <button class="btn-pause-cont" onclick="dismissPause()">Seguir escribiendo</button>
@@ -1661,28 +1662,28 @@ button{font-family:inherit}
 // ============================================
 const TUTORIALS = {
   home: [
-    {icon:'ðŸŒ¸',title:'Bienvenida a VÃ­nculo',text:'Este es tu espacio seguro para registrar emociones y reflexionar sobre tus vÃ­nculos.',highlight:'UsÃ¡ el semÃ¡foro para marcar cÃ³mo te sentÃ­s hoy: ðŸ’š Verde (bien), ðŸ’› Amarillo (incomodidad), â¤ï¸ðŸ©¹ Rojo (malestar)',target:'homeSemaforo'},
-    {icon:'ðŸ“Š',title:'Tu ritmo emocional',text:'Este cÃ­rculo muestra tu bienestar general basado en tus registros.',highlight:'Verde = bienestar | Amarillo = seÃ±ales de atenciÃ³n | Rojo = situaciÃ³n de riesgo',target:'homeVinculo'},
-    {icon:'âž•',title:'Registrar situaciÃ³n',text:'Cuando algo te pase, tocÃ¡ este botÃ³n para registrarlo.',highlight:'No necesitÃ¡s tener todo claro. EmpezÃ¡ escribiendo lo que sentÃ­s.',target:'homeRegisterBtn'}
+    {icon:'🌸',title:'Bienvenida a Vínculo',text:'Este es tu espacio seguro para registrar emociones y reflexionar sobre tus vínculos.',highlight:'Usá el semáforo para marcar cómo te sentís hoy: 💚 Verde (bien), 💛 Amarillo (incomodidad), ❤️🩹 Rojo (malestar)',target:'homeSemaforo'},
+    {icon:'📊',title:'Tu ritmo emocional',text:'Este círculo muestra tu bienestar general basado en tus registros.',highlight:'Verde = bienestar | Amarillo = señales de atención | Rojo = situación de riesgo',target:'homeVinculo'},
+    {icon:'➕',title:'Registrar situación',text:'Cuando algo te pase, tocá este botón para registrarlo.',highlight:'No necesitás tener todo claro. Empezá escribiendo lo que sentís.',target:'homeRegisterBtn'}
   ],
   register: [
-    {icon:'ðŸš¦',title:'Paso 1: SemÃ¡foro',text:'Primero elegÃ­ el color que representa esta situaciÃ³n.',highlight:'Verde = me hace bien | Amarillo = algo no me cierra | Rojo = me duele o desborda',target:'regSemaforo'},
-    {icon:'ðŸ“',title:'Paso 2: DescribÃ­',text:'Contanos quÃ© pasÃ³, quÃ© pensaste y quÃ© necesitÃ©.',highlight:'SÃ© honesta con vos misma. Esto es solo para vos.',target:'regQue'},
-    {icon:'ðŸªž',title:'Paso 3: Modo Espejo',text:'Mirate con compasiÃ³n. Â¿QuÃ© le dirÃ­as a alguien que querÃ©s si le pasara esto?',highlight:'PodÃ©s escribirle a tu yo del pasado, del futuro, o a alguien que querÃ©s.',target:'mirrorStep3'}
+    {icon:'🚦',title:'Paso 1: Semáforo',text:'Primero elegí el color que representa esta situación.',highlight:'Verde = me hace bien | Amarillo = algo no me cierra | Rojo = me duele o desborda',target:'regSemaforo'},
+    {icon:'📝',title:'Paso 2: Describí',text:'Contanos qué pasó, qué pensaste y qué necesité.',highlight:'Sé honesta con vos misma. Esto es solo para vos.',target:'regQue'},
+    {icon:'🪞',title:'Paso 3: Modo Espejo',text:'Mirate con compasión. ¿Qué le dirías a alguien que querés si le pasara esto?',highlight:'Podés escribirle a tu yo del pasado, del futuro, o a alguien que querés.',target:'mirrorStep3'}
   ],
   weekly: [
-    {icon:'ðŸ“…',title:'Tu semana',text:'AcÃ¡ ves todos tus registros organizados por dÃ­a.',highlight:'TocÃ¡ cualquier dÃ­a para ver los detalles de lo que registraste.',target:'weekGridBody'},
-    {icon:'ðŸ“ˆ',title:'DistribuciÃ³n de colores',text:'Estas barras te muestran la proporciÃ³n de verdes, amarillos y rojos esta semana.',highlight:'Si hay muchos rojos o amarillos seguidos, puede ser seÃ±al de que necesitÃ¡s apoyo.',target:'cdGreen'},
-    {icon:'ðŸªž',title:'ReflexiÃ³n final',text:'Al final de la semana, tomate un momento para reflexionar.',highlight:'Estas reflexiones te ayudan a ver quÃ© se repite y quÃ© necesitÃ¡s cambiar.',target:'refRed'}
+    {icon:'📅',title:'Tu semana',text:'Acá ves todos tus registros organizados por día.',highlight:'Tocá cualquier día para ver los detalles de lo que registraste.',target:'weekGridBody'},
+    {icon:'📈',title:'Distribución de colores',text:'Estas barras te muestran la proporción de verdes, amarillos y rojos esta semana.',highlight:'Si hay muchos rojos o amarillos seguidos, puede ser señal de que necesitás apoyo.',target:'cdGreen'},
+    {icon:'🪞',title:'Reflexión final',text:'Al final de la semana, tomate un momento para reflexionar.',highlight:'Estas reflexiones te ayudan a ver qué se repite y qué necesitás cambiar.',target:'refRed'}
   ],
   analysis: [
-    {icon:'ðŸŒ¿',title:'Tus huellas',text:'AcÃ¡ detectamos patrones que se repiten en tus registros.',highlight:'Si ves muchas "huellas", significa que hay comportamientos que se repiten y merecen atenciÃ³n.',target:'patternsBox'},
-    {icon:'ðŸ—ºï¸',title:'Mapa de tu camino',text:'Este timeline muestra todos tus registros en orden cronolÃ³gico.',highlight:'Cada registro es una huella en tu camino de autoconocimiento.',target:'timelineBox'}
+    {icon:'🌿',title:'Tus huellas',text:'Acá detectamos patrones que se repiten en tus registros.',highlight:'Si ves muchas "huellas", significa que hay comportamientos que se repiten y merecen atención.',target:'patternsBox'},
+    {icon:'🗺️',title:'Mapa de tu camino',text:'Este timeline muestra todos tus registros en orden cronológico.',highlight:'Cada registro es una huella en tu camino de autoconocimiento.',target:'timelineBox'}
   ],
   network: [
-    {icon:'ðŸ¤',title:'Red de apoyo',text:'No tenÃ©s que hacerlo sola. AcÃ¡ podÃ©s ver contactos y mensajes guiados.',highlight:'ActivÃ¡ el "Modo AcompaÃ±amiento" para ver sugerencias de cÃ³mo pedir ayuda.',target:'accompToggle'},
-    {icon:'ðŸ’¬',title:'Mensajes guiados',text:'Si no sabÃ©s cÃ³mo empezar a hablar con alguien, usÃ¡ estos mensajes preescritos.',highlight:'PodÃ©s pegarlos en WhatsApp o donde necesites.',target:'guided-messages'},
-    {icon:'ðŸ†˜',title:'Â¿No sabÃ©s quÃ© hacer?',text:'Si estÃ¡s en una situaciÃ³n difÃ­cil, tocÃ¡ este botÃ³n para ver recursos de ayuda.',highlight:'Incluye lÃ­neas de emergencia y consejos de seguridad.',target:'btn-dont-know'}
+    {icon:'🤝',title:'Red de apoyo',text:'No tenés que hacerlo sola. Acá podés ver contactos y mensajes guiados.',highlight:'Activá el "Modo Acompañamiento" para ver sugerencias de cómo pedir ayuda.',target:'accompToggle'},
+    {icon:'💬',title:'Mensajes guiados',text:'Si no sabés cómo empezar a hablar con alguien, usá estos mensajes preescritos.',highlight:'Podés pegarlos en WhatsApp o donde necesites.',target:'guided-messages'},
+    {icon:'🆘',title:'¿No sabés qué hacer?',text:'Si estás en una situación difícil, tocá este botón para ver recursos de ayuda.',highlight:'Incluye líneas de emergencia y consejos de seguridad.',target:'btn-dont-know'}
   ]
 };
 
@@ -1818,7 +1819,7 @@ const Crypto = {
       const iv = c.slice(0,12), data = c.slice(12);
       const d = await crypto.subtle.decrypt({name:'AES-GCM',iv}, this._key, data);
       return new TextDecoder().decode(d);
-    } catch { return 'âš ï¸ No se pudo descifrar'; }
+    } catch { return '⚠️ No se pudo descifrar'; }
   }
 };
 
@@ -1847,27 +1848,27 @@ const APP = {
 
 const PHRASES = [
   "\"No es tu culpa querer estar bien.\"", "\"A veces, mirar duele antes de sanar.\"",
-  "\"Tus emociones son vÃ¡lidas, todas.\"", "\"No necesitÃ¡s pedir perdÃ³n por sentir.\"",
+  "\"Tus emociones son válidas, todas.\"", "\"No necesitás pedir perdón por sentir.\"",
   "\"Los cambios suelen ser lentos. Eso no significa que no pasen.\"",
-  "\"EstÃ¡ bien no tener todas las respuestas.\"", "\"Cuidarte no es egoÃ­smo, es supervivencia.\"",
-  "\"MerecÃ©s estar donde te respeten. Siempre.\"", "\"A veces el amor se disfraza de control.\"",
-  "\"PodÃ©s observar sin juzgarte.\"", "\"No estÃ¡s exagerando. EstÃ¡s observando.\"",
-  "\"Un 'no' es una respuesta completa.\"", "\"La paciencia con una misma tambiÃ©n es valentÃ­a.\"",
-  "\"No estÃ¡s sola, aunque a veces lo sientas.\"", "\"Tus lÃ­mites son sagrados. Protegelos.\""
+  "\"Está bien no tener todas las respuestas.\"", "\"Cuidarte no es egoísmo, es supervivencia.\"",
+  "\"Merecés estar donde te respeten. Siempre.\"", "\"A veces el amor se disfraza de control.\"",
+  "\"Podés observar sin juzgarte.\"", "\"No estás exagerando. Estás observando.\"",
+  "\"Un 'no' es una respuesta completa.\"", "\"La paciencia con una misma también es valentía.\"",
+  "\"No estás sola, aunque a veces lo sientas.\"", "\"Tus límites son sagrados. Protegelos.\""
 ];
 
 const SEM_CTX = {
-  verde: "ðŸ’š Me alegra que hoy haya sido liviano. GuardÃ¡ este momento para los dÃ­as grises.",
-  amarillo: "ðŸ’› EstÃ¡ bien que algo no te cierre del todo. Ese ruido es vÃ¡lido, merecÃ©s escucharlo.",
-  rojo: "â¤ï¸â€ðŸ©¹ No estÃ¡s sola. Si necesitÃ¡s ayuda urgente, el botÃ³n ðŸ†˜ estÃ¡ arriba."
+  verde: "💚 Me alegra que hoy haya sido liviano. Guardá este momento para los días grises.",
+  amarillo: "💛 Está bien que algo no te cierre del todo. Ese ruido es válido, merecés escucharlo.",
+  rojo: "❤️‍🩹 No estás sola. Si necesitás ayuda urgente, el botón 🆘 está arriba."
 };
 
 const FEEDBACKS = [
-  {title:"Lo que sentiste es vÃ¡lido ðŸ’œ",text:"A veces, cuando algo se repite, puede confundir. EstÃ¡s haciendo algo importante al mirar esto con calma."},
-  {title:"Gracias por confiar en este espacio",text:"Escribir lo que pasa ayuda a ver las cosas con mÃ¡s claridad. No estÃ¡s exagerando, estÃ¡s observando."},
-  {title:"Tu experiencia importa",text:"Cada registro es un paso para entender mejor lo que vivÃ­s. No hay prisa, no hay presiÃ³n."},
-  {title:"Esto merece ser mirado ðŸŒ¿",text:"PodÃ©s observar sin juzgarte. Cada situaciÃ³n que registrÃ¡s te devuelve un poco mÃ¡s de claridad."},
-  {title:"No estÃ¡s sola en esto",text:"Registrar es un acto de cuidado. EstÃ¡s eligiendo mirar con atenciÃ³n, y eso ya es mucho."}
+  {title:"Lo que sentiste es válido 💜",text:"A veces, cuando algo se repite, puede confundir. Estás haciendo algo importante al mirar esto con calma."},
+  {title:"Gracias por confiar en este espacio",text:"Escribir lo que pasa ayuda a ver las cosas con más claridad. No estás exagerando, estás observando."},
+  {title:"Tu experiencia importa",text:"Cada registro es un paso para entender mejor lo que vivís. No hay prisa, no hay presión."},
+  {title:"Esto merece ser mirado 🌿",text:"Podés observar sin juzgarte. Cada situación que registrás te devuelve un poco más de claridad."},
+  {title:"No estás sola en esto",text:"Registrar es un acto de cuidado. Estás eligiendo mirar con atención, y eso ya es mucho."}
 ];
 
 // ============================================
@@ -1936,12 +1937,12 @@ function setupNavTooltips() {
   document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('mouseenter', () => {
       const labels = {
-        'nav-home':'Inicio â€” Tu semÃ¡foro diario y resumen',
-        'nav-register':'Registro â€” Guardar una nueva situaciÃ³n',
-        'nav-weekly':'Semana â€” Ver tu semana completa',
-        'nav-analysis':'Huellas â€” Patrones y anÃ¡lisis',
-        'nav-learn':'Aprender â€” InformaciÃ³n Ãºtil',
-        'nav-network':'Red â€” Contactos de apoyo'
+        'nav-home':'Inicio — Tu semáforo diario y resumen',
+        'nav-register':'Registro — Guardar una nueva situación',
+        'nav-weekly':'Semana — Ver tu semana completa',
+        'nav-analysis':'Huellas — Patrones y análisis',
+        'nav-learn':'Aprender — Información útil',
+        'nav-network':'Red — Contactos de apoyo'
       };
       const label = labels[item.dataset.tutorial];
       if (label) { tooltip.textContent = label; tooltip.classList.add('visible'); }
@@ -2035,13 +2036,13 @@ async function go(screen) {
 // ============================================
 function updateGreet() {
   const h = new Date().getHours();
-  let g = h < 12 ? 'Buen dÃ­a' : h < 18 ? 'Buenas tardes' : 'Buenas noches';
-  document.getElementById('greetText').textContent = `${g}, ${APP.name} ðŸ’œ`;
+  let g = h < 12 ? 'Buen día' : h < 18 ? 'Buenas tardes' : 'Buenas noches';
+  document.getElementById('greetText').textContent = `${g}, ${APP.name} 💜`;
   document.getElementById('greetDate').textContent = new Date().toLocaleDateString('es-AR', {weekday:'long',day:'numeric',month:'long'});
 }
 
 // ============================================
-// HOME: SEMÃFORO
+// HOME: SEMÁFORO
 // ============================================
 async function pickTodaySem(color) {
   document.querySelectorAll('.semaforo-opt').forEach(o => o.classList.remove('selected'));
@@ -2091,7 +2092,7 @@ function nextRegStep(step) {
     const dot = document.getElementById('step' + i);
     if (dot) { dot.classList.remove('active','done'); if (i < step) dot.classList.add('done'); if (i === step) dot.classList.add('active'); }
   }
-  const labels = {1:'1 de 4 â€” SemÃ¡foro',2:'2 de 4 â€” Emociones',3:'3 de 4 â€” Modo Espejo',4:'4 de 4 â€” Guardado'};
+  const labels = {1:'1 de 4 — Semáforo',2:'2 de 4 — Emociones',3:'3 de 4 — Modo Espejo',4:'4 de 4 — Guardado'};
   document.getElementById('stepLabel').textContent = labels[step] || '';
 }
 
@@ -2113,9 +2114,9 @@ function switchMirrorTab(btn) {
   APP.mirrorTab = btn.dataset.mt;
   const info = document.getElementById('mirrorLockInfo');
   const input = document.getElementById('mirrorInput');
-  if (APP.mirrorTab === 'yo_pasado') { input.placeholder = 'Querida yo de hace un aÃ±oâ€¦'; info.innerHTML = 'ðŸ”’ Esta carta se guarda para tu yo futuro'; }
-  else if (APP.mirrorTab === 'yo_futuro') { input.placeholder = 'Querida yo del futuro, espero queâ€¦'; info.innerHTML = 'ðŸ”’ Este mensaje se guarda para tu yo del futuro'; }
-  else { input.placeholder = 'Le dirÃ­a queâ€¦'; info.innerHTML = 'ðŸ”’ Este mensaje se guarda para que lo releas cuando lo necesites'; }
+  if (APP.mirrorTab === 'yo_pasado') { input.placeholder = 'Querida yo de hace un año…'; info.innerHTML = '🔒 Esta carta se guarda para tu yo futuro'; }
+  else if (APP.mirrorTab === 'yo_futuro') { input.placeholder = 'Querida yo del futuro, espero que…'; info.innerHTML = '🔒 Este mensaje se guarda para tu yo del futuro'; }
+  else { input.placeholder = 'Le diría que…'; info.innerHTML = '🔒 Este mensaje se guarda para que lo releas cuando lo necesites'; }
 }
 
 // ============================================
@@ -2160,11 +2161,11 @@ async function doSave() {
   if (!q) {
     document.getElementById('regQue').style.borderColor = 'var(--blush-dark)';
     document.getElementById('regQue').focus();
-    toast('Contanos quÃ© pasÃ³, aunque sea con pocas palabras');
+    toast('Contanos qué pasó, aunque sea con pocas palabras');
     return;
   }
 
-  if (!APP.semColor) { toast('ElegÃ­ un color de semÃ¡foro'); return; }
+  if (!APP.semColor) { toast('Elegí un color de semáforo'); return; }
 
   const isFirstEntry = await DB.get('isFirstEntry');
   if (!isFirstEntry) {
@@ -2204,11 +2205,11 @@ async function doSave() {
     await DB.set('firstEntrySem', 'alert');
     setTimeout(() => {
       showFirstEntryAlert();
-      toast('ðŸ†˜ Activamos recursos de ayuda para vos');
+      toast('🆘 Activamos recursos de ayuda para vos');
     }, 2000);
   }
 
-  toast('Registro guardado ðŸŒ¿');
+  toast('Registro guardado 🌿');
 }
 
 // ============================================
@@ -2219,10 +2220,10 @@ async function renderMirrorLetters() {
   const withMirror = entries.filter(e => e.mirrorResponse && e.mirrorResponse.trim());
   const preview = document.getElementById('mirrorLettersPreview');
   if (!withMirror.length) { preview.innerHTML = ''; return; }
-  let html = '<h4>ðŸªž Tus cartas guardadas</h4>';
+  let html = '<h4>🪞 Tus cartas guardadas</h4>';
   withMirror.slice(0, 5).forEach(e => {
     const d = new Date(e.timestamp);
-    const tabNames = {otra:'A alguien que quiero', yo_pasado:'A mi yo de hace un aÃ±o', yo_futuro:'A mi yo del futuro'};
+    const tabNames = {otra:'A alguien que quiero', yo_pasado:'A mi yo de hace un año', yo_futuro:'A mi yo del futuro'};
     html += `<div class="ml-card"><div class="ml-date">${d.toLocaleDateString('es-AR',{day:'numeric',month:'short'})}</div><p class="ml-text">"${e.mirrorResponse}"</p><div class="ml-type">${tabNames[e.mirrorTab] || 'Modo Espejo'}</div></div>`;
   });
   preview.innerHTML = html;
@@ -2252,8 +2253,8 @@ async function renderWeekGrid() {
   const body = document.getElementById('weekGridBody');
   body.innerHTML = '';
 
-  const dayNames = ['LUN','MAR','MIÃ‰','JUE','VIE','SÃB','DOM'];
-  const dayEmojis = ['ðŸŒ¸','â˜€ï¸','ðŸ’œ','ðŸƒ','ðŸŒ¿','â­','ðŸ’›'];
+  const dayNames = ['LUN','MAR','MIÉ','JUE','VIE','SÁB','DOM'];
+  const dayEmojis = ['🌸','☀️','💜','🍃','🌿','⭐','💛'];
   const today = new Date().toDateString();
 
   days.forEach((day, i) => {
@@ -2299,18 +2300,18 @@ function changeWeek(dir) { APP.currentWeek += dir; renderWeekGrid(); }
 
 async function showWeekDetail(day, entries) {
   const content = document.getElementById('weekDetailContent');
-  const dayName = ['Domingo','Lunes','Martes','MiÃ©rcoles','Jueves','Viernes','SÃ¡bado'][day.getDay()];
+  const dayName = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][day.getDay()];
   const monthName = day.toLocaleDateString('es-AR', {month:'long'});
 
   let html = `<h3>${dayName} ${day.getDate()} de ${monthName}</h3>`;
   entries.forEach(e => {
-    const semLabel = e.semColor === 'verde' ? 'ðŸ’š Verde' : e.semColor === 'amarillo' ? 'ðŸ’› Amarillo' : 'â¤ï¸ðŸ©¹ Rojo';
-    html += `<div class="wd-section"><h4>${semLabel} â€” ${new Date(e.timestamp).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})}</h4><p><strong>Â¿QuÃ© pasÃ³?</strong> ${e.quePaso}</p>`;
-    if (e.pense) html += `<p style="margin-top:6px"><strong>Â¿QuÃ© pensÃ©?</strong> ${e.pense}</p>`;
-    if (e.necesite) html += `<p style="margin-top:6px"><strong>Â¿QuÃ© necesitÃ©?</strong> ${e.necesite}</p>`;
+    const semLabel = e.semColor === 'verde' ? '💚 Verde' : e.semColor === 'amarillo' ? '💛 Amarillo' : '❤️🩹 Rojo';
+    html += `<div class="wd-section"><h4>${semLabel} — ${new Date(e.timestamp).toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'})}</h4><p><strong>¿Qué pasó?</strong> ${e.quePaso}</p>`;
+    if (e.pense) html += `<p style="margin-top:6px"><strong>¿Qué pensé?</strong> ${e.pense}</p>`;
+    if (e.necesite) html += `<p style="margin-top:6px"><strong>¿Qué necesité?</strong> ${e.necesite}</p>`;
     if (e.notas) html += `<p style="margin-top:6px"><strong>Notas:</strong> ${e.notas}</p>`;
     html += `</div>`;
-    if (e.mirrorResponse) html += `<div class="wd-mirror"><h4>ðŸªž Modo Espejo</h4><p>"${e.mirrorResponse}"</p></div>`;
+    if (e.mirrorResponse) html += `<div class="wd-mirror"><h4>🪞 Modo Espejo</h4><p>"${e.mirrorResponse}"</p></div>`;
   });
   html += `<button class="btn-dismiss" onclick="closeWeekDetail()" style="margin-top:12px">Cerrar</button>`;
   content.innerHTML = html;
@@ -2340,13 +2341,13 @@ async function renderTodayEntries() {
   const todayEntries = entries.filter(e => new Date(e.timestamp).toDateString() === today);
   const container = document.getElementById('todayEntries');
   if (!todayEntries.length) {
-    container.innerHTML = '<p style="font-size:.82rem;color:var(--text-muted);text-align:center;padding:8px">Sin registros aÃºn â€” Â¡empezÃ¡ a escribir! ðŸŒ±</p>';
+    container.innerHTML = '<p style="font-size:.82rem;color:var(--text-muted);text-align:center;padding:8px">Sin registros aún — ¡empezá a escribir! 🌱</p>';
     return;
   }
   let html = '';
   todayEntries.forEach(e => {
     const time = new Date(e.timestamp).toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
-    const summary = e.quePaso.length > 50 ? e.quePaso.slice(0, 50) + 'â€¦' : e.quePaso;
+    const summary = e.quePaso.length > 50 ? e.quePaso.slice(0, 50) + '…' : e.quePaso;
     html += `<div class="ts-row"><span class="ts-dot ${e.semColor||'empty'}"></span><span class="ts-text">${summary}</span><span style="font-size:.72rem;color:var(--text-muted)">${time}</span></div>`;
   });
   container.innerHTML = html;
@@ -2365,7 +2366,7 @@ async function refreshStats() {
 }
 
 // ============================================
-// VINCULO RING â€” CORREGIDO Y FUNCIONAL
+// VINCULO RING — CORREGIDO Y FUNCIONAL
 // ============================================
 async function refreshVinculo() {
   const entries = await DB.entries();
@@ -2376,13 +2377,13 @@ async function refreshVinculo() {
 
   if (!entries.length) {
     ring.style.setProperty('--ring-pct', '0%');
-    pct.textContent = 'â€”';
-    msg.textContent = 'AÃºn no empezaste. No hay apuro. Cuando estÃ©s lista, este espacio te espera.';
+    pct.textContent = '—';
+    msg.textContent = 'Aún no empezaste. No hay apuro. Cuando estés lista, este espacio te espera.';
     ctx.textContent = '';
     return;
   }
 
-  // Calculate score based on semÃ¡foro colors
+  // Calculate score based on semáforo colors
   const verdes = entries.filter(e => e.semColor === 'verde').length;
   const amarillos = entries.filter(e => e.semColor === 'amarillo').length;
   const rojos = entries.filter(e => e.semColor === 'rojo').length;
@@ -2399,28 +2400,28 @@ async function refreshVinculo() {
   let contextMsg = '';
 
   if (rojos > 0 && verdes === 0) {
-    // All red â€” high risk context
-    msg.textContent = 'EstÃ¡s atravesando momentos muy difÃ­ciles. No estÃ¡s sola.';
-    contextMsg = 'âš ï¸ Todos tus registros son rojos. Esto puede indicar una situaciÃ³n de riesgo. ConsiderÃ¡ contactar a alguien de confianza o la lÃ­nea 144.';
+    // All red — high risk context
+    msg.textContent = 'Estás atravesando momentos muy difíciles. No estás sola.';
+    contextMsg = '⚠️ Todos tus registros son rojos. Esto puede indicar una situación de riesgo. Considerá contactar a alguien de confianza o la línea 144.';
   } else if (rojos > amarillos + verdes) {
-    // More red than others â€” concerning
-    msg.textContent = 'Hay mÃ¡s momentos difÃ­ciles que buenos. MerecÃ©s estar bien.';
-    contextMsg = 'ðŸ’› Notamos que los momentos rojos predominan. PodrÃ­a ser momento de buscar apoyo.';
+    // More red than others — concerning
+    msg.textContent = 'Hay más momentos difíciles que buenos. Merecés estar bien.';
+    contextMsg = '💛 Notamos que los momentos rojos predominan. Podría ser momento de buscar apoyo.';
   } else if (verdes > rojos + amarillos) {
-    // Mostly green â€” healthy
-    msg.textContent = 'Hay cosas que estÃ¡n funcionando bien. SeguÃ­ mirando con calma. ðŸŒ¸';
-    contextMsg = 'ðŸ’š La mayorÃ­a de tus registros son verdes. Â¡QuÃ© lindo! SeguÃ­ cuidÃ¡ndote.';
+    // Mostly green — healthy
+    msg.textContent = 'Hay cosas que están funcionando bien. Seguí mirando con calma. 🌸';
+    contextMsg = '💚 La mayoría de tus registros son verdes. ¡Qué lindo! Seguí cuidándote.';
   } else if (amarillos > verdes + rojos) {
-    // Mostly yellow â€” ambiguous
-    msg.textContent = 'Hay cosas que merecen ser miradas. No pasa nada por observar. ðŸŒ¿';
-    contextMsg = 'ðŸ’› Los amarillos predominan. Algo no te cierra del todo. Escuchate.';
+    // Mostly yellow — ambiguous
+    msg.textContent = 'Hay cosas que merecen ser miradas. No pasa nada por observar. 🌿';
+    contextMsg = '💛 Los amarillos predominan. Algo no te cierra del todo. Escuchate.';
   } else if (rojos > 0 && verdes > 0) {
-    // Mixed â€” balanced but with concerns
-    msg.textContent = 'Hay momentos buenos y difÃ­ciles. Ambos son vÃ¡lidos.';
-    contextMsg = 'ðŸŒ— TenÃ©s registros mixtos. Es normal. Los momentos buenos existen junto con los difÃ­ciles.';
+    // Mixed — balanced but with concerns
+    msg.textContent = 'Hay momentos buenos y difíciles. Ambos son válidos.';
+    contextMsg = '🌗 Tenés registros mixtos. Es normal. Los momentos buenos existen junto con los difíciles.';
   } else {
-    msg.textContent = 'EstÃ¡s empezando a ver tus patrones. SeguÃ­ registrando. ðŸŒ±';
-    contextMsg = 'ðŸŒ± Cada registro te ayuda a conocerte mejor.';
+    msg.textContent = 'Estás empezando a ver tus patrones. Seguí registrando. 🌱';
+    contextMsg = '🌱 Cada registro te ayuda a conocerte mejor.';
   }
 
   ctx.textContent = contextMsg;
@@ -2455,28 +2456,28 @@ async function detectSignals() {
 
   // Physical violence check
   if ((bc['me_golpeo']||0) >= 1) {
-    signals.push({level:'alert',icon:'ðŸš¨',title:'SeÃ±al de violencia fÃ­sica',desc:'Registraste situaciones donde hubo agresiÃ³n fÃ­sica.',translation:'La violencia fÃ­sica nunca es aceptable. No es tu culpa. Hay personas y recursos que pueden ayudarte.',insight:'âš ï¸ Por favor, contactÃ¡ a la lÃ­nea 144 o al 911 si estÃ¡s en peligro.'});
+    signals.push({level:'alert',icon:'🚨',title:'Señal de violencia física',desc:'Registraste situaciones donde hubo agresión física.',translation:'La violencia física nunca es aceptable. No es tu culpa. Hay personas y recursos que pueden ayudarte.',insight:'⚠️ Por favor, contactá a la línea 144 o al 911 si estás en peligro.'});
   }
 
   const inv = ['me_hizo_dudar','me_critico','me_halo_culpa'].reduce((s,b) => s + (bc[b]||0), 0);
-  if (inv >= 2) signals.push({level:'dew',icon:'ðŸŒŠ',title:'Esto aparece seguidoâ€¦ Â¿te resuena?',desc:'Aparecen momentos donde dudÃ¡s de lo que sentÃ­s.',translation:'Esto podrÃ­a estar relacionado con invalidaciÃ³n emocional.',insight:'Â¿Lo habÃ­as notado antes?'});
+  if (inv >= 2) signals.push({level:'dew',icon:'🌊',title:'Esto aparece seguido… ¿te resuena?',desc:'Aparecen momentos donde dudás de lo que sentís.',translation:'Esto podría estar relacionado con invalidación emocional.',insight:'¿Lo habías notado antes?'});
 
   if ((bc['me_ignoro']||0) >= 2 || (bc['fue_indiferente']||0) >= 2)
-    signals.push({level:'cloud',icon:'ðŸŒ¥ï¸',title:'Hay silencios que pesan',desc:'Varias veces sentiste que no te escuchaban.',translation:'La indiferencia repetida puede generar soledad.',insight:'Â¿Te pasÃ³ de sentirte sola incluso acompaÃ±ada?'});
+    signals.push({level:'cloud',icon:'🌥️',title:'Hay silencios que pesan',desc:'Varias veces sentiste que no te escuchaban.',translation:'La indiferencia repetida puede generar soledad.',insight:'¿Te pasó de sentirte sola incluso acompañada?'});
 
-  if ((bc['me_controlÃ³']||0) >= 1)
-    signals.push({level:'dew',icon:'ðŸ”’',title:'SeÃ±al para observar con calma',desc:'Registraste situaciones donde sentiste que te controlaban.',translation:'El control puede empezar de formas sutiles.',insight:'El control a veces se disfraza de preocupaciÃ³n.'});
+  if ((bc['me_controló']||0) >= 1)
+    signals.push({level:'dew',icon:'🔒',title:'Señal para observar con calma',desc:'Registraste situaciones donde sentiste que te controlaban.',translation:'El control puede empezar de formas sutiles.',insight:'El control a veces se disfraza de preocupación.'});
 
-  const pos = ['me_apoyo','fue_cariÃ±oso'].reduce((s,b) => s + (bc[b]||0), 0);
+  const pos = ['me_apoyo','fue_cariñoso'].reduce((s,b) => s + (bc[b]||0), 0);
   if (pos >= 2 && !signals.length)
-    signals.push({level:'leaf',icon:'ðŸŒ¸',title:'Hay cosas que cuidar',desc:'Varias veces registraste apoyo y cariÃ±o.',translation:'Reconocer lo bueno tambiÃ©n es importante.',insight:'Â¿Estos momentos son frecuentes?'});
+    signals.push({level:'leaf',icon:'🌸',title:'Hay cosas que cuidar',desc:'Varias veces registraste apoyo y cariño.',translation:'Reconocer lo bueno también es importante.',insight:'¿Estos momentos son frecuentes?'});
 
   if (pos >= 1 && inv >= 1)
-    signals.push({level:'cloud',icon:'ðŸŒ“',title:'SeÃ±ales mixtas',desc:'Registraste tanto apoyo como invalidaciÃ³n.',translation:'Es normal sentir confusiÃ³n. Ambos son reales.',insight:'A veces los momentos buenos hacen mÃ¡s difÃ­cil ver lo que no funciona.'});
+    signals.push({level:'cloud',icon:'🌓',title:'Señales mixtas',desc:'Registraste tanto apoyo como invalidación.',translation:'Es normal sentir confusión. Ambos son reales.',insight:'A veces los momentos buenos hacen más difícil ver lo que no funciona.'});
 
   const nf = ['triste','enojada','confundida','asustada','culpa'].reduce((s,f) => s + (fc[f]||0), 0);
   if (nf >= 3 && signals.length < 2)
-    signals.push({level:'cloud',icon:'ðŸŒ§ï¸',title:'Emociones que piden atenciÃ³n',desc:'Varias veces te sentiste triste, confundida o con miedo.',translation:'Tus emociones son una brÃºjula.',insight:'Â¿CÃ³mo te sentÃ­as antes de conocer a esta persona?'});
+    signals.push({level:'cloud',icon:'🌧️',title:'Emociones que piden atención',desc:'Varias veces te sentiste triste, confundida o con miedo.',translation:'Tus emociones son una brújula.',insight:'¿Cómo te sentías antes de conocer a esta persona?'});
 
   return signals.slice(0, 3);
 }
@@ -2496,7 +2497,7 @@ async function renderAnalysis() {
       const card = document.createElement('div');
       card.className = `pattern-card ${s.level}`;
       card.style.animationDelay = i * .08 + 's';
-      card.innerHTML = `<div class="pattern-header"><span class="pattern-nature-icon">${s.icon}</span><span class="pattern-title">${s.title}</span></div><p class="pattern-desc">${s.desc}</p><div class="pattern-translation"><p><strong>ðŸ§  MirÃ¡ndolo asÃ­:</strong> ${s.translation}</p></div><p class="pattern-insight">ðŸ’¡ ${s.insight}</p>`;
+      card.innerHTML = `<div class="pattern-header"><span class="pattern-nature-icon">${s.icon}</span><span class="pattern-title">${s.title}</span></div><p class="pattern-desc">${s.desc}</p><div class="pattern-translation"><p><strong>🧠 Mirándolo así:</strong> ${s.translation}</p></div><p class="pattern-insight">💡 ${s.insight}</p>`;
       box.appendChild(card);
     });
   }
@@ -2514,8 +2515,8 @@ function renderTimeline(entries) {
     const d = new Date(e.timestamp);
     const ago = timeAgo(d);
     const semClass = e.semColor || 'verde';
-    const semLabel = e.semColor === 'verde' ? 'ðŸ’š' : e.semColor === 'amarillo' ? 'ðŸ’›' : 'â¤ï¸ðŸ©¹';
-    const sum = e.quePaso.length > 70 ? e.quePaso.slice(0,70) + 'â€¦' : e.quePaso;
+    const semLabel = e.semColor === 'verde' ? '💚' : e.semColor === 'amarillo' ? '💛' : '❤️🩹';
+    const sum = e.quePaso.length > 70 ? e.quePaso.slice(0,70) + '…' : e.quePaso;
     const item = document.createElement('div');
     item.className = `timeline-item t-${semClass}`;
     item.style.animationDelay = i * .06 + 's';
@@ -2530,7 +2531,7 @@ function timeAgo(d) {
   if (m < 1) return 'Ahora';
   if (m < 60) return `Hace ${m} min`;
   if (h < 24) return `Hace ${h}h`;
-  if (dy < 7) return `Hace ${dy} dÃ­a${dy>1?'s':''}`;
+  if (dy < 7) return `Hace ${dy} día${dy>1?'s':''}`;
   if (dy < 30) return `Hace ${Math.floor(dy/7)} sem.`;
   return d.toLocaleDateString('es-AR',{day:'numeric',month:'short'});
 }
@@ -2554,9 +2555,9 @@ function togAccomp() {
 }
 
 function copyMsg(el) {
-  const t = el.textContent.replace(' ðŸ“‹','');
-  if (navigator.clipboard) { navigator.clipboard.writeText(t).then(() => toast('Mensaje copiado ðŸ“‹')); }
-  else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Mensaje copiado ðŸ“‹'); }
+  const t = el.textContent.replace(' 📋','');
+  if (navigator.clipboard) { navigator.clipboard.writeText(t).then(() => toast('Mensaje copiado 📋')); }
+  else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Mensaje copiado 📋'); }
 }
 
 // ============================================
@@ -2573,13 +2574,13 @@ function openSettings() { document.getElementById('settingsModal').classList.add
 document.getElementById('settingsModal').addEventListener('click', e => { if (e.target.id === 'settingsModal') document.getElementById('settingsModal').classList.remove('visible'); });
 
 async function changeName() {
-  const n = prompt('Â¿CÃ³mo querÃ©s que te llamemos?', APP.name);
-  if (n && n.trim()) { APP.name = n.trim(); await DB.set('userName', APP.name); document.getElementById('settName').textContent = APP.name; updateGreet(); toast('Nombre actualizado ðŸ’œ'); }
+  const n = prompt('¿Cómo querés que te llamemos?', APP.name);
+  if (n && n.trim()) { APP.name = n.trim(); await DB.set('userName', APP.name); document.getElementById('settName').textContent = APP.name; updateGreet(); toast('Nombre actualizado 💜'); }
 }
 
 async function changePINFlow() {
   const currentPinSet = localStorage.getItem('v_pinHash') === 'set';
-  let p = prompt(currentPinSet ? 'IngresÃ¡ tu nuevo PIN de 4-8 dÃ­gitos (dejalo vacÃ­o si querÃ©s desactivarlo):' : 'IngresÃ¡ un PIN de 4-8 dÃ­gitos para proteger tus datos:');
+  let p = prompt(currentPinSet ? 'Ingresá tu nuevo PIN de 4-8 dígitos (dejalo vacío si querés desactivarlo):' : 'Ingresá un PIN de 4-8 dígitos para proteger tus datos:');
   
   if (p === null) return; // Cancelled
   
@@ -2587,15 +2588,15 @@ async function changePINFlow() {
   let disabling = false;
   if (p === '') {
     if (currentPinSet) {
-      const confirmDisable = confirm('Â¿QuerÃ©s desactivar el PIN de seguridad? Tus datos seguirÃ¡n cifrados pero no requerirÃ¡n contraseÃ±a al iniciar.');
+      const confirmDisable = confirm('¿Querés desactivar el PIN de seguridad? Tus datos seguirán cifrados pero no requerirán contraseña al iniciar.');
       if (!confirmDisable) return;
       disabling = true;
     } else {
-      toast('PIN invÃ¡lido');
+      toast('PIN inválido');
       return;
     }
   } else if (!/^\d{4,8}$/.test(p)) {
-    toast('El PIN debe tener entre 4 y 8 dÃ­gitos');
+    toast('El PIN debe tener entre 4 y 8 dígitos');
     return;
   }
   
@@ -2622,11 +2623,11 @@ async function changePINFlow() {
     if (disabling) {
       localStorage.removeItem('v_pinHash');
       await DB.remove('pinVerification');
-      toast('ðŸ” PIN desactivado');
+      toast('🔐 PIN desactivado');
     } else {
       await DB.set('pinVerification', 'ok');
       localStorage.setItem('v_pinHash', 'set');
-      toast('ðŸ” PIN configurado con Ã©xito');
+      toast('🔐 PIN configurado con éxito');
     }
     
     // Update UI name in settings
@@ -2634,7 +2635,7 @@ async function changePINFlow() {
     
   } catch (err) {
     console.error(err);
-    toast('âš ï¸ Error al configurar el PIN');
+    toast('⚠️ Error al configurar el PIN');
   }
 }
 
@@ -2666,7 +2667,7 @@ function pressPinKey(val) {
 
 async function submitPin() {
   if (enteredPin.length < 4) {
-    toast('El PIN debe tener al menos 4 dÃ­gitos');
+    toast('El PIN debe tener al menos 4 dígitos');
     return;
   }
   
@@ -2690,7 +2691,7 @@ async function submitPin() {
       const tutorialSeen = localStorage.getItem('v_tutorialSeen');
       if (!tutorialSeen) setTimeout(() => startTutorial('home'), 1000);
       
-      toast('Desbloqueado ðŸ”“');
+      toast('Desbloqueado 🔓');
     } else {
       throw new Error('Incorrect PIN');
     }
@@ -2720,7 +2721,7 @@ function togDarkTheme() {
     headerDarkBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
   }
   
-  toast(isDark ? 'Tema oscuro activado ðŸŒ™' : 'Tema claro activado â˜€ï¸');
+  toast(isDark ? 'Tema oscuro activado 🌙' : 'Tema claro activado ☀️');
 }
 
 function togDiscreet() {
@@ -2730,8 +2731,8 @@ function togDiscreet() {
 }
 
 function applyDiscreet(on) {
-  if (on) { document.title = 'ðŸ“… Calendario'; document.getElementById('appLogo').textContent = 'Calendario'; document.querySelector('.app-header').classList.add('discreet-mode'); document.getElementById('discToggle').classList.add('active'); }
-  else { document.title = 'VÃ­nculo â€” EntendÃ©. ElegÃ­. Cuidate.'; document.getElementById('appLogo').textContent = 'VÃ­nculo ðŸŒ¿'; document.querySelector('.app-header').classList.remove('discreet-mode'); document.getElementById('discToggle').classList.remove('active'); }
+  if (on) { document.title = '📅 Calendario'; document.getElementById('appLogo').textContent = 'Calendario'; document.querySelector('.app-header').classList.add('discreet-mode'); document.getElementById('discToggle').classList.add('active'); }
+  else { document.title = 'Vínculo — Entendé. Elegí. Cuidate.'; document.getElementById('appLogo').textContent = 'Vínculo 🌿'; document.querySelector('.app-header').classList.remove('discreet-mode'); document.getElementById('discToggle').classList.remove('active'); }
 }
 
 // ============================================
@@ -2776,7 +2777,7 @@ function startPause() {
     s--;
     const m = Math.floor(s/60), sec = s%60;
     el.textContent = `${m}:${sec.toString().padStart(2,'0')}`;
-    if (s <= 0) { clearInterval(APP.pauseInterval); dismissPause(); toast('ðŸµ Pausa terminada. SeguÃ­ cuando estÃ©s lista'); }
+    if (s <= 0) { clearInterval(APP.pauseInterval); dismissPause(); toast('🍵 Pausa terminada. Seguí cuando estés lista'); }
   }, 1000);
 }
 
@@ -2802,7 +2803,7 @@ async function doExportPDF() {
 
   // Cover header
   doc.setFontSize(20); doc.setTextColor(139, 92, 246);
-  doc.text('VÃ­nculo â€” Resumen para tu terapeuta', 105, 20, { align:'center' });
+  doc.text('Vínculo — Resumen para tu terapeuta', 105, 20, { align:'center' });
   doc.setFontSize(10); doc.setTextColor(120);
   doc.text('Generado el ' + new Date().toLocaleDateString('es-AR'), 105, 28, { align:'center' });
   doc.setFontSize(9); doc.setTextColor(80);
@@ -2818,9 +2819,9 @@ async function doExportPDF() {
   const rojos = entries.filter(e => e.semColor === 'rojo').length;
 
   doc.text(`Total de registros: ${entries.length}`, 25, y); y += 7;
-  doc.setTextColor(22, 163, 74); doc.text(`ðŸ’š Verdes (Bienestar): ${verdes}`, 30, y); y += 6;
-  doc.setTextColor(217, 119, 6); doc.text(`ðŸ’› Amarillos (AtenciÃ³n/Molestia): ${amarillos}`, 30, y); y += 6;
-  doc.setTextColor(220, 38, 38); doc.text(`â¤ï¸ðŸ©¹ Rojos (Malestar/Dolor): ${rojos}`, 30, y); y += 10;
+  doc.setTextColor(22, 163, 74); doc.text(`💚 Verdes (Bienestar): ${verdes}`, 30, y); y += 6;
+  doc.setTextColor(217, 119, 6); doc.text(`💛 Amarillos (Atención/Molestia): ${amarillos}`, 30, y); y += 6;
+  doc.setTextColor(220, 38, 38); doc.text(`❤️🩹 Rojos (Malestar/Dolor): ${rojos}`, 30, y); y += 10;
 
   // 2. Huellas detectadas
   const signals = await detectSignals();
@@ -2830,7 +2831,7 @@ async function doExportPDF() {
     doc.text('2. Huellas detectadas', 20, y); y += 9;
     
     signals.forEach(s => {
-      const signalText = `${s.icon} ${s.title}: ${s.desc}\nðŸ§  InterpretaciÃ³n: ${s.translation}\nðŸ’¡ Mensaje: ${s.insight}`;
+      const signalText = `${s.icon} ${s.title}: ${s.desc}\n🧠 Interpretación: ${s.translation}\n💡 Mensaje: ${s.insight}`;
       const splitSignal = doc.splitTextToSize(signalText, 160);
       const neededH = splitSignal.length * 5 + 4;
       
@@ -2842,7 +2843,7 @@ async function doExportPDF() {
     y += 4;
   }
 
-  // 3. ReflexiÃ³n semanal
+  // 3. Reflexión semanal
   const ref = await DB.get('reflection');
   if (ref && (ref.red || ref.yellow || ref.green || ref.next)) {
     checkPageBreak(20);
@@ -2850,10 +2851,10 @@ async function doExportPDF() {
     doc.text('3. Reflexiones semanales guardadas', 20, y); y += 9;
     
     const refQuestions = [
-      { q: 'Â¿En quÃ© situaciones aparecen mÃ¡s rojos?', val: ref.red },
-      { q: 'Â¿Hay algo que se repite en los amarillos?', val: ref.yellow },
-      { q: 'Â¿QuÃ© tienen en comÃºn mis verdes?', val: ref.green },
-      { q: 'Â¿QuÃ© me quiero recordar para la prÃ³xima semana?', val: ref.next }
+      { q: '¿En qué situaciones aparecen más rojos?', val: ref.red },
+      { q: '¿Hay algo que se repite en los amarillos?', val: ref.yellow },
+      { q: '¿Qué tienen en común mis verdes?', val: ref.green },
+      { q: '¿Qué me quiero recordar para la próxima semana?', val: ref.next }
     ];
 
     refQuestions.forEach(item => {
@@ -2871,23 +2872,23 @@ async function doExportPDF() {
     y += 4;
   }
 
-  // 4. Ãšltimos registros en detalle
+  // 4. Últimos registros en detalle
   if (entries.length > 0) {
     checkPageBreak(20);
     doc.setFontSize(13); doc.setTextColor(50);
-    doc.text('4. Detalle de Ãºltimos registros (mÃ¡x. 15)', 20, y); y += 9;
+    doc.text('4. Detalle de últimos registros (máx. 15)', 20, y); y += 9;
     
     const printEntries = entries.slice(0, 15);
     printEntries.forEach((e, idx) => {
       const d = new Date(e.timestamp);
       const dateStr = d.toLocaleDateString('es-AR') + ' ' + d.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
-      const semLabel = e.semColor === 'verde' ? 'ðŸ’š Verde' : e.semColor === 'amarillo' ? 'ðŸ’› Amarillo' : 'â¤ï¸ðŸ©¹ Rojo';
+      const semLabel = e.semColor === 'verde' ? '💚 Verde' : e.semColor === 'amarillo' ? '💛 Amarillo' : '❤️🩹 Rojo';
       
-      const headerText = `#${idx + 1} - ${dateStr} [SemÃ¡foro: ${semLabel}]`;
-      const contentText = `â€¢ Â¿QuÃ© pasÃ³?: ${e.quePaso}\n` +
-                          (e.pense ? `â€¢ Â¿QuÃ© pensÃ©?: ${e.pense}\n` : '') +
-                          (e.necesite ? `â€¢ Â¿QuÃ© necesitÃ©?: ${e.necesite}\n` : '') +
-                          (e.mirrorResponse ? `â€¢ Carta espejo: "${e.mirrorResponse}"` : '');
+      const headerText = `#${idx + 1} - ${dateStr} [Semáforo: ${semLabel}]`;
+      const contentText = `• ¿Qué pasó?: ${e.quePaso}\n` +
+                          (e.pense ? `• ¿Qué pensé?: ${e.pense}\n` : '') +
+                          (e.necesite ? `• ¿Qué necesité?: ${e.necesite}\n` : '') +
+                          (e.mirrorResponse ? `• Carta espejo: "${e.mirrorResponse}"` : '');
                           
       const splitContent = doc.splitTextToSize(contentText, 160);
       const blockHeight = 6 + (splitContent.length * 4.5) + 6;
@@ -2905,9 +2906,9 @@ async function doExportPDF() {
   checkPageBreak(12);
   y += 6;
   doc.setFontSize(8); doc.setTextColor(150);
-  doc.text('Este documento fue generado localmente y de forma segura por VÃ­nculo.', 20, y);
+  doc.text('Este documento fue generado localmente y de forma segura por Vínculo.', 20, y);
   doc.save('vinculo-resumen-terapia.pdf');
-  toast('PDF generado ðŸ“„');
+  toast('PDF generado 📄');
 }
 
 // ============================================
@@ -2993,7 +2994,6 @@ async function renderContacts() {
   container.innerHTML = html;
 }
 
-// Call renderContacts in doInit()
 function shareApp() {
   if (navigator.share) {
     navigator.share({
@@ -3003,10 +3003,12 @@ function shareApp() {
     }).catch(e => console.log(e));
   } else {
     const t = window.location.href;
-    if (navigator.clipboard) { navigator.clipboard.writeText(t).then(() => toast('Enlace copiado al portapapeles ??')); }
-    else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Enlace copiado al portapapeles ??'); }
+    if (navigator.clipboard) { navigator.clipboard.writeText(t).then(() => toast('Enlace copiado al portapapeles 💜')); }
+    else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Enlace copiado al portapapeles 💜'); }
   }
 }
+
+// Ensure scripts render properly
 </script>
 </body>
 </html>
