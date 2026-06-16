@@ -811,9 +811,9 @@ button{font-family:inherit}
 /* ============================================
    TUTORIAL OVERLAY
    ============================================ */
-.tutorial-overlay{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn .3s}
+.tutorial-overlay{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn .3s;backdrop-filter:blur(2px)}
 .tutorial-overlay.visible{display:flex}
-.tutorial-card{background:var(--white);border-radius:var(--radius-2xl);padding:32px 28px;max-width:420px;width:100%;box-shadow:var(--shadow-xl);position:relative;animation:scaleIn .4s cubic-bezier(.34,1.56,.64,1)}
+.tutorial-card{background:var(--white);border-radius:var(--radius-2xl);padding:24px 20px;max-width:340px;width:calc(100% - 32px);box-shadow:var(--shadow-xl);position:relative;animation:scaleIn .4s cubic-bezier(.34,1.56,.64,1);transition:top 0.3s ease, bottom 0.3s ease, transform 0.3s ease}
 .tutorial-card .tc-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border:none;background:var(--beige);border-radius:50%;font-size:1rem;cursor:pointer;display:grid;place-items:center;transition:background .2s}
 .tutorial-card .tc-close:hover{background:var(--stone)}
 .tutorial-card .tc-icon{font-size:3rem;margin-bottom:16px;text-align:center}
@@ -917,12 +917,315 @@ button{font-family:inherit}
 .btn-clear:hover{border-color:var(--blush);color:var(--blush-dark);background:var(--blush-bg)}
 
 @media(min-width:520px){.screen{max-width:520px}.floating-alert{right:calc(50% - 260px + 16px)}}
+
+/* WEB LAYOUT & COMPANION PANEL */
+.web-layout-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop-companion {
+  display: none;
+}
+
+@media(min-width: 900px) {
+  body {
+    overflow: hidden !important; /* Prevent double scrollbars on desktop dashboard */
+  }
+  .web-layout-wrapper {
+    flex-direction: row;
+    gap: 40px;
+    max-width: 980px;
+    width: 100%;
+    z-index: 10;
+  }
+  .phone-frame {
+    box-shadow: 0 30px 70px -15px rgba(0,0,0,0.22), 0 0 0 4px rgba(28,25,23,0.06) !important;
+  }
+  
+  .desktop-companion {
+    display: flex;
+    flex-direction: column;
+    flex: 1.2;
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    padding: 32px;
+    box-shadow: 0 30px 70px -15px rgba(0,0,0,0.18), 0 0 0 1px var(--stone);
+    height: 844px; /* Matches phone mockup height */
+    overflow-y: auto;
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+  }
+  body.dark-theme .desktop-companion {
+    box-shadow: 0 30px 70px -15px rgba(0,0,0,0.6), 0 0 0 1px var(--stone);
+  }
+  
+  .comp-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--stone);
+    padding-bottom: 14px;
+  }
+  .comp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: var(--lila-dark);
+    font-weight: 700;
+  }
+  .comp-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .comp-section {
+    margin-bottom: 22px;
+  }
+  .comp-section h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .comp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .comp-stat-card {
+    background: var(--beige-warm);
+    border-radius: var(--radius-lg);
+    padding: 14px;
+    border: 1px solid var(--stone);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+  .comp-stat-val {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--lila-dark);
+  }
+  .comp-stat-lbl {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: 1px;
+  }
+  
+  .comp-index-box {
+    background: var(--beige-warm);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    border: 1px solid var(--stone);
+    margin-bottom: 16px;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+  .comp-index-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .comp-index-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  .comp-index-pct {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--lila-dark);
+  }
+  .comp-index-track {
+    height: 10px;
+    background: var(--stone);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    transition: background-color 0.4s ease;
+  }
+  .comp-index-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--lila) 0%, var(--rosa) 100%);
+    border-radius: var(--radius-full);
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .comp-signals-box {
+    background: var(--lila-ghost);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    border: 1.5px dashed var(--lila-light);
+    min-height: 80px;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+  .comp-empty-text {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+    padding: 8px 0;
+  }
+  .comp-signal-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    border-left: 4px solid;
+    margin-bottom: 8px;
+    box-shadow: var(--shadow-xs);
+    transition: background-color 0.4s ease;
+  }
+  .comp-signal-item:last-child {
+    margin-bottom: 0;
+  }
+  .comp-signal-item.leaf { border-left-color: var(--sage-dark); }
+  .comp-signal-item.cloud { border-left-color: var(--honey-dark); }
+  .comp-signal-item.dew { border-left-color: var(--blush-dark); }
+  .comp-signal-item.alert { border-left-color: var(--alert-dark); background: var(--alert-bg); }
+  .csi-icon { font-size: 1.1rem; }
+  .csi-info h5 { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); }
+  .csi-info p { font-size: 0.74rem; color: var(--text-secondary); margin-top: 1px; }
+  
+  .comp-actions-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .comp-btn {
+    padding: 11px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: inherit;
+  }
+  .comp-btn-primary {
+    background: linear-gradient(135deg, var(--lila) 0%, var(--rosa) 100%);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+  .comp-btn-primary:active { transform: scale(0.97); }
+  .comp-btn-secondary {
+    background: var(--beige-dark);
+    color: var(--text-secondary);
+    border: 1.5px solid var(--stone);
+  }
+  .comp-btn-secondary:hover { background: var(--stone); }
+  
+  .comp-resources {
+    background: var(--blush-ghost);
+    border: 1px solid rgba(248, 113, 113, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 14px;
+    margin-top: 14px;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+  .comp-resources h5 {
+    color: var(--blush-dark);
+    font-size: 0.84rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .comp-resources p {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+  .comp-resources-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .comp-resource-btn {
+    flex: 1;
+    padding: 7px;
+    border-radius: var(--radius-md);
+    background: var(--white);
+    border: 1px solid var(--blush);
+    color: var(--blush-dark);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .comp-resource-btn:hover {
+    background: var(--blush-bg);
+  }
+
+  /* Companion Tabs CSS */
+  .comp-tabs-header {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid var(--stone);
+    padding-bottom: 8px;
+  }
+  .comp-tab-btn {
+    background: none;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+  }
+  .comp-tab-btn:hover {
+    background: var(--lila-ghost);
+    color: var(--lila-dark);
+  }
+  .comp-tab-btn.active {
+    background: var(--lila-bg);
+    color: var(--lila-dark);
+  }
+  body.dark-theme .comp-tab-btn.active {
+    background: var(--lila-bg);
+    color: var(--lila-light);
+  }
+  
+  .comp-tab-content {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeIn 0.35s ease-out;
+  }
+  .comp-tab-content.active {
+    display: flex;
+  }
+  .comp-contacts-box {
+    margin-top: 10px;
+    min-height: 80px;
+  }
+}
 </style>
 </head>
 <body>
 
 <div class="desktop-bg-blob blob-1"></div>
 <div class="desktop-bg-blob blob-2"></div>
+
+<div class="web-layout-wrapper">
 
 <div class="phone-frame">
   <div class="phone-notch"></div>
@@ -1377,11 +1680,9 @@ button{font-family:inherit}
     </div>
 
     <h3 style="margin-bottom:10px;font-size:.92rem">👥 Contactos de confianza</h3>
-    <div class="contact-card"><div class="contact-avatar">👩</div><div class="contact-info"><h4>María (amiga)</h4><p>Siempre escucha</p></div><button class="contact-btn" onclick="toast('💬 Simulación: mensaje enviado')">💬</button></div>
-    <div class="contact-card"><div class="contact-avatar">👩‍⚕️</div><div class="contact-info"><h4>Dra. López</h4><p>Psicóloga</p></div><button class="contact-btn" onclick="toast('📅 Simulación: recordatorio')">📅</button></div>
-    <div class="contact-card"><div class="contact-avatar">👩‍👧</div><div class="contact-info"><h4>Mamá</h4><p>Contención familiar</p></div><button class="contact-btn" onclick="toast('📞 Simulación: llamada…')">📞</button></div>
+    <div id="contactsList"></div>
 
-    <button class="btn-primary" style="margin-top:12px" onclick="toast('Función próximamente 💜')">+ Invitar a alguien</button>
+    <button class="btn-primary" style="margin-top:12px" onclick="openAddContactModal()">+ Añadir contacto de confianza</button>
     <button class="btn-dont-know" style="margin-top:16px" onclick="openSafety()">🆘 No sé qué hacer con esto</button>
     <button class="btn-export" onclick="doExportPDF()">📄 Exportar resumen para mi terapeuta</button>
     <div class="privacy-msg"><span>🔒</span><p>Tus datos son tuyos. Vos decidís qué compartir, con quién y cuándo.</p></div>
@@ -1447,9 +1748,42 @@ button{font-family:inherit}
   </div>
 </div>
 
+<!-- Add Contact Modal -->
+<div class="safety-modal" id="contactModal">
+  <div class="safety-content">
+    <h2>👥 Añadir Contacto</h2>
+    <p class="sc-sub">Agregá a alguien de tu confianza para comunicarte rápido si lo necesitás. Se guarda cifrado localmente.</p>
+    
+    <div class="form-group">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="onboarding-input" id="contactName" placeholder="Ej: María, Mamá, Dra. López" style="margin-bottom: 12px; border: 2px solid var(--stone); background: var(--white); color: var(--text-primary);">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Relación o Rol</label>
+      <input type="text" class="onboarding-input" id="contactRole" placeholder="Ej: Amiga, Psicóloga, Hermano" style="margin-bottom: 12px; border: 2px solid var(--stone); background: var(--white); color: var(--text-primary);">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Teléfono / Celular (opcional)</label>
+      <input type="tel" class="onboarding-input" id="contactPhone" placeholder="Ej: +54911..." style="margin-bottom: 12px; border: 2px solid var(--stone); background: var(--white); color: var(--text-primary);">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Tipo de Acción Rápida</label>
+      <select class="onboarding-input" id="contactAction" style="margin-bottom: 20px; background: var(--white); color: var(--text-primary); border: 2px solid var(--stone); font-family: inherit;">
+        <option value="whatsapp">💬 WhatsApp Directo</option>
+        <option value="call">📞 Llamada Telefónica</option>
+        <option value="sms">📱 Mensaje SMS</option>
+      </select>
+    </div>
+    
+    <button class="btn-primary" onclick="saveContact()">Guardar Contacto 💜</button>
+    <button class="btn-dismiss" onclick="closeContactModal()">Cancelar</button>
+  </div>
+</div>
+
 <!-- Settings Modal -->
 <div class="settings-modal" id="settingsModal">
-  <div class="settings-content">
+  <div class="settings-content" style="position: relative;">
+    <button class="tc-close" onclick="closeSettings()" style="position: absolute; top: 16px; right: 16px;">✕</button>
     <h2>⚙️ Ajustes</h2>
     <div class="setting-row">
       <div class="setting-label"><span class="sl-icon">👤</span><div class="sl-text"><h4>Tu nombre</h4><p id="settName">—</p></div></div>
@@ -1505,6 +1839,124 @@ button{font-family:inherit}
 
 </div> <!-- Closing phone-frame -->
 
+<!-- ======================== DESKTOP COMPANION ======================== -->
+<div class="desktop-companion" id="desktopCompanion">
+  <div class="comp-header">
+    <div>
+      <div class="comp-title">Vínculo 🌿</div>
+      <div class="comp-subtitle">Tu diario de autonomía y bienestar</div>
+    </div>
+    <div id="compDate" style="font-size: 0.8rem; text-align: right; color: var(--text-muted);"></div>
+  </div>
+
+  <!-- Tabs Header -->
+  <div class="comp-tabs-header">
+    <button class="comp-tab-btn active" id="btnCompTab-dashboard" onclick="switchCompTab('dashboard')">📊 Resumen</button>
+    <button class="comp-tab-btn" id="btnCompTab-network" onclick="switchCompTab('network')">👥 Red de Apoyo</button>
+    <button class="comp-tab-btn" id="btnCompTab-messages" onclick="switchCompTab('messages')">💬 Mensajes</button>
+    <button class="comp-tab-btn" id="btnCompTab-resources" onclick="switchCompTab('resources')">🆘 Recursos</button>
+  </div>
+
+  <!-- Tab 1: Dashboard -->
+  <div class="comp-tab-content active" id="compTab-dashboard">
+    <div class="comp-section">
+      <h4 id="compGreet">Hola 💜</h4>
+      <p style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5;">Este panel de escritorio se sincroniza en tiempo real con tu dispositivo móvil simulado a la izquierda. Todos tus datos permanecen seguros, cifrados localmente en este navegador.</p>
+    </div>
+
+    <div class="comp-section">
+      <h4>📊 Tus Estadísticas Generales</h4>
+      <div class="comp-stats-grid">
+        <div class="comp-stat-card">
+          <div class="comp-stat-val" id="compTotal">0</div>
+          <div class="comp-stat-lbl">Registros guardados</div>
+        </div>
+        <div class="comp-stat-card">
+          <div class="comp-stat-val" style="color: var(--sage-dark);" id="compVerdes">0</div>
+          <div class="comp-stat-lbl">Momentos Verdes 💚</div>
+        </div>
+        <div class="comp-stat-card">
+          <div class="comp-stat-val" style="color: var(--honey-dark);" id="compAmarillos">0</div>
+          <div class="comp-stat-lbl">Momentos Amarillos 💛</div>
+        </div>
+        <div class="comp-stat-card">
+          <div class="comp-stat-val" style="color: var(--blush-dark);" id="compRojos">0</div>
+          <div class="comp-stat-lbl">Momentos Rojos ❤️🩹</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-section">
+      <h4>🪞 Ritmo de Bienestar Emocional</h4>
+      <div class="comp-index-box">
+        <div class="comp-index-header">
+          <span class="comp-index-title">Índice de bienestar general</span>
+          <span class="comp-index-pct" id="compScore">—</span>
+        </div>
+        <div class="comp-index-track">
+          <div class="comp-index-fill" id="compScoreBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-section">
+      <h4>🌱 Huellas y Patrones Detectados</h4>
+      <div class="comp-signals-box" id="compSignals">
+        <p class="comp-empty-text">Aún no se detectan patrones. Seguí registrando para ver tus huellas acá.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: Network -->
+  <div class="comp-tab-content" id="compTab-network">
+    <div class="comp-section">
+      <h4>👥 Contactos de Confianza</h4>
+      <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 12px;">Personas de tu entorno a quienes podés contactar con facilidad en situaciones de vulnerabilidad o alerta.</p>
+      <div id="compContactsList" class="comp-contacts-box" style="display: flex; flex-direction: column; gap: 10px;">
+        <!-- Dynamic contacts inside companion panel -->
+      </div>
+      <button class="comp-btn comp-btn-primary" onclick="openAddContactModal()" style="margin-top: 14px; width: 100%;"><i class="fas fa-plus"></i> Añadir contacto de confianza</button>
+    </div>
+  </div>
+
+  <!-- Tab 3: Messages -->
+  <div class="comp-tab-content" id="compTab-messages">
+    <div class="comp-section">
+      <h4>💬 Mensajes para Compartir</h4>
+      <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 12px;">Mensajes de ejemplo prediseñados para facilitar la comunicación con tu red de apoyo en momentos complicados. Hacé clic para copiar.</p>
+      <div class="guided-messages" style="margin-bottom: 0;">
+        <div class="message-bubble" onclick="copyMsg(this)">¿Te puedo contar algo que me hizo sentir incómoda?</div>
+        <div class="message-bubble" onclick="copyMsg(this)">Necesito hablar con alguien, ¿tenés un momento?</div>
+        <div class="message-bubble" onclick="copyMsg(this)">No sé si estoy exagerando, pero algo me pasa y quiero contártelo.</div>
+        <div class="message-bubble" onclick="copyMsg(this)">¿Puedo pedirte un consejo sobre algo personal?</div>
+        <div class="message-bubble" onclick="copyMsg(this)">Estoy pasando por un momento difícil y necesito compañía.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 4: Resources -->
+  <div class="comp-tab-content" id="compTab-resources">
+    <div class="comp-section">
+      <h4>🆘 Recursos de Emergencia</h4>
+      <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 12px;">Líneas nacionales gratuitas y confidenciales para recibir acompañamiento inmediato y orientación profesional.</p>
+      <div class="safety-section" style="margin-bottom: 20px;">
+        <a href="tel:144" class="safety-phone"><span class="sp-icon">📱</span><div class="sp-info"><h4>Línea 144</h4><p>Violencia de género · 24hs · Gratuito</p></div></a>
+        <a href="tel:102" class="safety-phone"><span class="sp-icon">🏥</span><div class="sp-info"><h4>Línea 102</h4><p>Niños, niñas y adolescentes</p></div></a>
+        <a href="tel:911" class="safety-phone"><span class="sp-icon">🚨</span><div class="sp-info"><h4>911 — Emergencias</h4><p>Si estás en peligro inmediato</p></div></a>
+        <a href="tel:08009990091" class="safety-phone"><span class="sp-icon">💜</span><div class="sp-info"><h4>0800-999-0091</h4><p>Violencia doméstica</p></div></a>
+      </div>
+      
+      <h4>🛠️ Acciones Rápidas</h4>
+      <div class="comp-actions-box">
+        <button class="comp-btn comp-btn-primary" onclick="doExportPDF()"><i class="fas fa-file-pdf"></i> Exportar PDF para terapia</button>
+        <button class="comp-btn" onclick="openSettings()" style="background: var(--beige); color: var(--text-primary); border: 1.5px solid var(--stone);"><i class="fas fa-cog"></i> Ajustes de la App</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> <!-- Closing web-layout-wrapper -->
+
 <script>
 // ============================================
 // TUTORIAL SYSTEM
@@ -1540,8 +1992,17 @@ let currentTutorial = null;
 let currentTutorialStep = 0;
 
 function startTutorial(screen) {
+  // Close any open modals that might block the tutorial view
+  document.getElementById('settingsModal').classList.remove('visible');
+  document.getElementById('safetyModal').classList.remove('visible');
+  document.getElementById('contactModal').classList.remove('visible');
+  
   currentTutorial = screen || 'home';
   currentTutorialStep = 0;
+  
+  // Navigate to corresponding screen automatically
+  go(currentTutorial);
+  
   showTutorialStep();
 }
 
@@ -1566,11 +2027,46 @@ function showTutorialStep() {
   document.getElementById('tutorialOverlay').classList.add('visible');
   document.querySelectorAll('.highlight-element').forEach(el => el.classList.remove('highlight-element'));
 
+  // Reset default card styles
+  const card = document.querySelector('.tutorial-card');
+  if (card) {
+    card.style.position = '';
+    card.style.top = '';
+    card.style.bottom = '';
+    card.style.left = '';
+    card.style.transform = '';
+  }
+
   if (step.target) {
     const el = document.getElementById(step.target) || document.querySelector('.' + step.target);
     if (el) {
       el.classList.add('highlight-element');
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Calculate dynamic positioning to prevent overlapping the target element
+      setTimeout(() => {
+        const rect = el.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        if (card) {
+          const elementCenterY = rect.top + rect.height / 2;
+          const isTopHalf = elementCenterY < (viewportHeight / 2);
+          
+          card.style.position = 'absolute';
+          card.style.left = '50%';
+          card.style.transform = 'translateX(-50%)';
+          
+          if (isTopHalf) {
+            // Place card at the bottom if element is in the top half
+            card.style.top = 'auto';
+            card.style.bottom = '95px';
+          } else {
+            // Place card at the top if element is in the bottom half
+            card.style.top = '100px';
+            card.style.bottom = 'auto';
+          }
+        }
+      }, 150);
     }
   }
 }
@@ -1627,7 +2123,7 @@ const DB = {
   async addEntry(e) { const list = await this.entries(); e.id = Date.now(); e.timestamp = new Date().toISOString(); list.unshift(e); await this.set('entries', list); return e; },
   async moods() { return (await this.get('moods')) || []; },
   async addMood(em) { const l = await this.moods(); l.push({emotion:em, timestamp:new Date().toISOString()}); await this.set('moods', l); },
-  async clear() { for (const k of ['entries','moods','userName','pinHash','termsAccepted','reflection','microRef','todaySem','isFirstEntry','firstEntrySem']) { await this.remove(k); } }
+  async clear() { for (const k of ['entries','moods','userName','pinHash','termsAccepted','reflection','microRef','todaySem','isFirstEntry','firstEntrySem','contacts']) { await this.remove(k); } }
 };
 
 // ============================================
@@ -1777,6 +2273,7 @@ async function showApp() {
   updateGreet();
   await refreshAll();
   document.getElementById('settName').textContent = APP.name;
+  await renderContacts();
 
   const ref = await DB.get('reflection');
   if (ref) {
@@ -1803,6 +2300,8 @@ async function refreshAll() {
   await renderTodayEntries();
   await renderWeekGrid();
   await renderAnalysis();
+  await renderContacts();
+  await refreshCompanionPanel();
   document.getElementById('phraseText').textContent = PHRASES[new Date().getDay() % PHRASES.length];
 }
 
@@ -2353,6 +2852,129 @@ function copyMsg(el) {
   else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); toast('Mensaje copiado 📋'); }
 }
 
+/* CONTACTS SYSTEM */
+async function getContacts() {
+  let list = await DB.get('contacts');
+  if (!list) {
+    list = [
+      { id: 1, name: 'María', role: 'Amiga', phone: '', action: 'whatsapp', avatar: '👩' },
+      { id: 2, name: 'Dra. López', role: 'Psicóloga', phone: '', action: 'call', avatar: '👩‍⚕️' },
+      { id: 3, name: 'Mamá', role: 'Contención familiar', phone: '', action: 'whatsapp', avatar: '👩‍👧' }
+    ];
+    await DB.set('contacts', list);
+  }
+  return list;
+}
+
+async function renderContacts() {
+  const list = await getContacts();
+  const container = document.getElementById('contactsList');
+  if (container) {
+    if (list.length === 0) {
+      container.innerHTML = '<p style="font-size:0.82rem; color:var(--text-muted); text-align:center; padding:12px;">No tenés contactos guardados aún. 🌱</p>';
+    } else {
+      let html = '';
+      list.forEach(c => {
+        const icon = c.action === 'whatsapp' ? '💬' : c.action === 'call' ? '📞' : '📱';
+        html += `
+          <div class="contact-card" style="position: relative; transition: transform 0.2s;">
+            <div class="contact-avatar">${c.avatar || '👤'}</div>
+            <div class="contact-info">
+              <h4>${c.name} <span style="font-weight:400; font-size:0.75rem; color:var(--text-muted);">(${c.role})</span></h4>
+              <p style="font-size:0.75rem;">${c.phone || 'Sin número guardado'}</p>
+            </div>
+            <div style="display:flex; gap: 6px;">
+              <button class="contact-btn" onclick="triggerContactAction(${c.id})" title="Acción rápida">${icon}</button>
+              <button class="contact-btn" onclick="deleteContact(${c.id})" style="color: var(--alert-dark); background: var(--alert-bg);" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+  }
+  await refreshCompanionPanel();
+}
+
+function openAddContactModal() {
+  document.getElementById('contactName').value = '';
+  document.getElementById('contactRole').value = '';
+  document.getElementById('contactPhone').value = '';
+  document.getElementById('contactAction').value = 'whatsapp';
+  document.getElementById('contactModal').classList.add('visible');
+}
+
+function closeContactModal() {
+  document.getElementById('contactModal').classList.remove('visible');
+}
+
+async function saveContact() {
+  const name = document.getElementById('contactName').value.trim();
+  const role = document.getElementById('contactRole').value.trim();
+  const phone = document.getElementById('contactPhone').value.trim();
+  const action = document.getElementById('contactAction').value;
+  
+  if (!name) {
+    toast('Ingresá al menos el nombre');
+    return;
+  }
+  
+  const avatars = ['👩', '🧑', '👨', '👩‍⚕️', '👩‍👧', '👨‍👦', '👵', '👴', '👤'];
+  const randomAvatar = avatars[Math.floor(Math.random() * avatars.length)];
+  
+  const list = await getContacts();
+  list.push({
+    id: Date.now(),
+    name,
+    role: role || 'Contacto',
+    phone,
+    action,
+    avatar: randomAvatar
+  });
+  
+  await DB.set('contacts', list);
+  closeContactModal();
+  await renderContacts();
+  toast('Contacto guardado 👥');
+}
+
+async function deleteContact(id) {
+  if (!confirm('¿Querés eliminar este contacto de confianza?')) return;
+  let list = await getContacts();
+  list = list.filter(c => c.id !== id);
+  await DB.set('contacts', list);
+  await renderContacts();
+  toast('Contacto eliminado');
+}
+
+async function triggerContactAction(id) {
+  const list = await getContacts();
+  const c = list.find(item => item.id === id);
+  if (!c) return;
+  
+  if (c.phone) {
+    if (c.action === 'call') {
+      window.location.href = `tel:${c.phone}`;
+      toast(`Llamando a ${c.name}...`);
+    } else if (c.action === 'sms') {
+      window.location.href = `sms:${c.phone}`;
+      toast(`Enviando SMS a ${c.name}...`);
+    } else if (c.action === 'whatsapp') {
+      let cleanPhone = c.phone.replace(/\+/g, '').replace(/\s/g, '').replace(/-/g, '');
+      window.open(`https://wa.me/${cleanPhone}`, '_blank');
+      toast(`Abriendo WhatsApp con ${c.name}...`);
+    }
+  } else {
+    if (c.action === 'call') {
+      toast(`📞 Simulación: llamando a ${c.name}...`);
+    } else if (c.action === 'sms') {
+      toast(`📱 Simulación: redactando SMS para ${c.name}...`);
+    } else if (c.action === 'whatsapp') {
+      toast(`💬 Simulación: enviando mensaje a ${c.name}...`);
+    }
+  }
+}
+
 // ============================================
 // SAFETY
 // ============================================
@@ -2364,7 +2986,9 @@ document.getElementById('safetyModal').addEventListener('click', e => { if (e.ta
 // SETTINGS
 // ============================================
 function openSettings() { document.getElementById('settingsModal').classList.add('visible'); }
-document.getElementById('settingsModal').addEventListener('click', e => { if (e.target.id === 'settingsModal') document.getElementById('settingsModal').classList.remove('visible'); });
+function closeSettings() { document.getElementById('settingsModal').classList.remove('visible'); }
+document.getElementById('settingsModal').addEventListener('click', e => { if (e.target.id === 'settingsModal') closeSettings(); });
+document.getElementById('contactModal').addEventListener('click', e => { if (e.target.id === 'contactModal') closeContactModal(); });
 
 async function changeName() {
   const n = prompt('¿Cómo querés que te llamemos?', APP.name);
@@ -2395,7 +3019,7 @@ async function changePINFlow() {
   
   try {
     // 1. Read all current data using current key
-    const keysToMigrate = ['entries', 'moods', 'userName', 'termsAccepted', 'reflection', 'microRef', 'todaySem', 'isFirstEntry', 'firstEntrySem'];
+    const keysToMigrate = ['entries', 'moods', 'userName', 'termsAccepted', 'reflection', 'microRef', 'todaySem', 'isFirstEntry', 'firstEntrySem', 'contacts', 'pinVerification'];
     const tempDb = {};
     for (const key of keysToMigrate) {
       tempDb[key] = await DB.get(key);
@@ -2712,6 +3336,115 @@ function toast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+async function refreshCompanionPanel() {
+  const companion = document.getElementById('desktopCompanion');
+  if (!companion) return;
+  
+  const entries = await DB.entries();
+  const name = await DB.get('userName') || APP.name || 'Invitada';
+  
+  // Date
+  const dateEl = document.getElementById('compDate');
+  if (dateEl) {
+    dateEl.textContent = new Date().toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' });
+  }
+  
+  // Greeting
+  const greetEl = document.getElementById('compGreet');
+  if (greetEl) {
+    greetEl.textContent = `Hola, ${name} 💜`;
+  }
+  
+  // Stats
+  const verdes = entries.filter(e => e.semColor === 'verde').length;
+  const amarillos = entries.filter(e => e.semColor === 'amarillo').length;
+  const rojos = entries.filter(e => e.semColor === 'rojo').length;
+  
+  document.getElementById('compTotal').textContent = entries.length;
+  document.getElementById('compVerdes').textContent = verdes;
+  document.getElementById('compAmarillos').textContent = amarillos;
+  document.getElementById('compRojos').textContent = rojos;
+  
+  // Wellness Score
+  const scoreEl = document.getElementById('compScore');
+  const barEl = document.getElementById('compScoreBar');
+  if (entries.length > 0) {
+    const score = Math.round(((verdes * 100) + (amarillos * 50) + (rojos * 10)) / entries.length);
+    const clampedScore = Math.max(10, Math.min(95, score));
+    if (scoreEl) scoreEl.textContent = clampedScore + '%';
+    if (barEl) barEl.style.width = clampedScore + '%';
+  } else {
+    if (scoreEl) scoreEl.textContent = '—';
+    if (barEl) barEl.style.width = '0%';
+  }
+  
+  // Signals
+  const signals = await detectSignals();
+  const signalsBox = document.getElementById('compSignals');
+  if (signalsBox) {
+    if (!signals.length) {
+      signalsBox.innerHTML = '<p class="comp-empty-text">Aún no se detectan patrones. Seguí registrando situaciones para ver tus huellas acá.</p>';
+    } else {
+      let html = '';
+      signals.forEach(s => {
+        html += `
+          <div class="comp-signal-item ${s.level}">
+            <span class="csi-icon">${s.icon}</span>
+            <div class="csi-info">
+              <h5>${s.title}</h5>
+              <p>${s.desc}</p>
+            </div>
+          </div>
+        `;
+      });
+      signalsBox.innerHTML = html;
+    }
+  }
+
+  // Render Contacts inside companion panel
+  const compContactsBox = document.getElementById('compContactsList');
+  if (compContactsBox) {
+    const contacts = await getContacts();
+    if (contacts.length === 0) {
+      compContactsBox.innerHTML = '<p style="font-size:0.82rem; color:var(--text-muted); text-align:center; padding:12px;">No tenés contactos guardados aún. 🌱</p>';
+    } else {
+      let html = '';
+      contacts.forEach(c => {
+        const icon = c.action === 'whatsapp' ? '💬' : c.action === 'call' ? '📞' : '📱';
+        html += `
+          <div class="contact-card" style="position: relative;">
+            <div class="contact-avatar">${c.avatar || '👤'}</div>
+            <div class="contact-info">
+              <h4>${c.name} <span style="font-weight:400; font-size:0.75rem; color:var(--text-muted);">(${c.role})</span></h4>
+              <p style="font-size:0.75rem;">${c.phone || 'Sin número guardado'}</p>
+            </div>
+            <div style="display:flex; gap: 6px;">
+              <button class="contact-btn" onclick="triggerContactAction(${c.id})" title="Acción rápida">${icon}</button>
+              <button class="contact-btn" onclick="deleteContact(${c.id})" style="color: var(--alert-dark); background: var(--alert-bg);" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+        `;
+      });
+      compContactsBox.innerHTML = html;
+    }
+  }
+}
+
+function switchCompTab(tabId) {
+  // Hide all tab content
+  document.querySelectorAll('.comp-tab-content').forEach(el => el.classList.remove('active'));
+  // Deactivate all tab buttons
+  document.querySelectorAll('.comp-tab-btn').forEach(el => el.classList.remove('active'));
+  
+  // Show active tab content
+  const activeTab = document.getElementById('compTab-' + tabId);
+  if (activeTab) activeTab.classList.add('active');
+  
+  // Activate selected tab button
+  const activeBtn = document.getElementById('btnCompTab-' + tabId);
+  if (activeBtn) activeBtn.classList.add('active');
 }
 </script>
 </body>
